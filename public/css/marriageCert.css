@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    /* transition: all .2s linear; */
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+
+}
+
+.navigation {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background: #314964;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+.navigation.active {
+    width: 60px;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+
+}
+
+.navigation ul li:nth-child(1) {
+    margin-bottom: 85px;
+}
+
+.navigation ul li a:hover {
+    background-color: white;
+    color: #314964;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.logo {
+    width: 60px;
+    align-items: center;
+}
+
+.main {
+    position: absolute;
+    width: calc(100% - 250px);
+    left: 250px;
+    min-height: 100vh;
+    background: white;
+    transition: 0.5s;
+}
+
+.main.active {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+.main .topbar {
+    width: 100%;
+    background: #314964;
+    height: 60px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.toggle::before {
+    content: "\f0c9";
+    font-family: fontAwesome;
+    position: absolute;
+    height: 100%;
+    line-height: 60px;
+    font-size: 20px;
+    text-align: center;
+    color: #EAE3D6;
+}
+
+.search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    outline: none;
+    border: 1px solid gray;
+}
+
+.search label .fa {
+    position: absolute;
+    left: 15px;
+    top: 4px;
+    cursor: pointer;
+}
+
+.landingbtn {
+    position: relative;
+}
+
+.signinBtn {
+    color: #314964;
+    padding: 12px 35px;
+    border: none;
+    margin: 15px;
+    outline: none;
+    border-radius: 25px;
+    padding: 10px 15px;
+    font-size: 0.8em;
+    cursor: pointer;
+    font-family: 'Courier Prime', monospace;
+}
+
+.signinBtn:hover {
+    color: #314964;
+    background-color: white;
+}
+
+.signupBtn {
+    background-color: #314964;
+    color: white;
+    padding: 12px 35px;
+    border: none;
+    margin: 10px;
+    outline: none;
+    border-radius: 15px;
+    padding: 10px 15px;
+    font-size: 0.8em;
+    cursor: pointer;
+    font-family: 'Courier Prime', monospace;
+
+}
+
+.signupBtn:hover {
+    color: #314964;
+    background-color: white;
+}
+
+section {
+    background-color: rgb(255, 255, 255);
+    /* margin: 50px auto; */
+    width: relative;
+    height: 100vh;
+}
+
+.intro_title {
+    display: block;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: #314964;
+    line-height: 100%;
+    margin: 50px 100px auto;
+
+}
+
+.instruct {
+    margin: 75px 100px auto;
+}
+
+.details {
+    justify-content: center;
+    border-radius: 2px;
+    background-color: #bbbbbb;
+    margin: 20px 100px auto;
+    align-items: center;
+    padding: 5px;
+}
+
+.continueBtn{
+    position: relative;
+    background-color: #314964;
+    color: white;
+    padding: 12px 35px;
+    border: none;
+    margin: 75px 1000px  auto;
+    outline: none;
+    border-radius: 15px;
+    padding: 10px 15px;
+    font-size: 0.8em;
+    cursor: pointer;
+    font-family: 'Courier Prime', monospace;
+}
+
+
+/* footer */
+.footer {
+    background-color: #314964;
+    padding: 50px 0;
+
+}
+
+.contain {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.row1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.footer-col {
+    width: 33%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: rgb(225, 224, 224);
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #bbbbbb;
+    height: 2px;
+    box-sizing: border-box;
+    width: 110px;
+}
+
+.footer-col img {
+    width: 200px;
+    height: 100px;
+    opacity: 50%;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.connect {
+    text-align: center;
+}
+
+.connect h4 {
+    font-size: 18px;
+    color: rgb(225, 224, 224);
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.connect h4::before {
+    content: '';
+    position: absolute;
+    left: 40;
+    bottom: -10px;
+    background-color: #bbbbbb;
+    height: 2px;
+    box-sizing: border-box;
+    width: 110px;
+}
+
+.connect .social-links a {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.connect .social-links a:hover {
+    color: #314964;
+    background-color: #ffffffcc;
+}
