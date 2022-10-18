@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BusinessPermit;
+// use App\Models\Marriage;
+
 use Illuminate\Http\Request;
 
-class StaffHomeController extends Controller
+class RecordBusinessController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,6 +28,8 @@ class StaffHomeController extends Controller
 
     public function index()
     {
-        return view('staffHome');
+        $businessPermit = BusinessPermit::all();
+        return view('businessPermitRequest', compact('businessPermit')); //databasename
     }
+
 }

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Suggestions;
+// use App\Models\Marriage;
+
 use Illuminate\Http\Request;
 
-class StaffHomeController extends Controller
+class RecordSuggestionsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,6 +28,8 @@ class StaffHomeController extends Controller
 
     public function index()
     {
-        return view('staffHome');
+        $suggestions = Suggestions::all();
+        return view('suggestionsRequest', compact('suggestions')); //databasename
     }
+
 }

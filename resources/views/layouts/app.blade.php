@@ -19,12 +19,29 @@
 </head>
 <style>
     body {
-        background-color: #314964;
+        background-color: #ffffff;
     }
 
     .logo {
         width: 60px;
         align-items: center;
+    }
+
+    .landingbtn {
+        position: relative;
+    }
+
+    .signinBtn {
+        color: white;
+        padding: 12px 35px;
+        border: none;
+        margin: 15px;
+        outline: none;
+        border-radius: 25px;
+        padding: 10px 15px;
+        font-size: 0.8em;
+        cursor: pointer;
+        font-family: 'Courier Prime', monospace;
     }
 </style>
 
@@ -52,9 +69,9 @@
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
+                                <div class="landingbtn">
+                                    <a href="{{ route('login') }}"> <button class="signinBtn">Login</button></a>
+                                </div>
                             @endif
 
                             {{-- @if (Route::has('register'))
@@ -65,12 +82,13 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" style="color: rgb(101, 237, 255)" aria-expanded="false" v-pre>
+                                    data-bs-toggle="dropdown" aria-haspopup="true" style="color: #314964; font-weight:600"
+                                    aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a style="color: #314964; font-weight:600" class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}

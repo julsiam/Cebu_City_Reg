@@ -114,7 +114,7 @@
     button {
         border: 0;
         outline: none;
-        border-radius: 35px;
+        border-radius: 50px;
         padding: 8px;
         width: 25mm;
         font-size: 15px;

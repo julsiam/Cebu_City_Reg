@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Scholarship;
+
 use Illuminate\Http\Request;
 
-class StaffHomeController extends Controller
+class RecordScholarshipController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,6 +27,7 @@ class StaffHomeController extends Controller
 
     public function index()
     {
-        return view('staffHome');
+        $scholarship = Scholarship::all();
+        return view('scholarshipRequest', compact('scholarship')); //databasename
     }
 }

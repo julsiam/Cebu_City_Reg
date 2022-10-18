@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Marriage;
+// use App\Models\Marriage;
+
 use Illuminate\Http\Request;
 
-class StaffHomeController extends Controller
+class RecordMarriageController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,6 +28,7 @@ class StaffHomeController extends Controller
 
     public function index()
     {
-        return view('staffHome');
+        $marriage = Marriage::all();
+        return view('marriageRequest', compact('marriage')); //databasename
     }
 }

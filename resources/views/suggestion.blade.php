@@ -123,7 +123,7 @@
                                 <label>
                                     Type of Suggestion<span class="req">*</span>
                                 </label>
-                                <textarea name="c" id="Type of Suggestion" rows="2" cols="50"></textarea>
+                                <textarea name="suggestionType" id="Type of Suggestion" rows="2" cols="50"></textarea>
                             </div>
 
                             <h3> Details</h3>

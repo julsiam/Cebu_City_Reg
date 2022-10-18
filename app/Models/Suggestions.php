@@ -19,4 +19,3 @@ class Suggestions extends Eloquent
         'suggestionDetails', 
     ];
 }
-//birthForm and birth index added

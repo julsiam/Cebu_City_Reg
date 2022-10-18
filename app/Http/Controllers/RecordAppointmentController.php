@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Birth;
+use App\Models\Appointment;
 // use App\Models\Marriage;
 
 use Illuminate\Http\Request;
 
-class RecordController extends Controller
+class RecordAppointmentController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,20 +26,10 @@ class RecordController extends Controller
      */
 
 
-    // public function index()
-    // {
-    //     return view('home');
-    // }
-
     public function index()
     {
-        $birth = Birth::all();
-        return view('home', compact('birth')); //databasename
+        $appointment = Appointment::all();
+        return view('appointmentRequest', compact('appointment')); //databasename
     }
-    
-    // public function marriageHome()
-    // {
-    //     $birth = Marriage::all();
-    //     return view('marriageHome', compact('marriage')); //databasename
-    // }
+
 }

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cenomar;
+// use App\Models\Marriage;
+
 use Illuminate\Http\Request;
 
-class StaffHomeController extends Controller
+class RecordCenomarController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,6 +28,7 @@ class StaffHomeController extends Controller
 
     public function index()
     {
-        return view('staffHome');
+        $cenomar = Cenomar::all();
+        return view('cenomarRequest', compact('cenomar')); //databasename
     }
 }

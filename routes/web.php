@@ -11,7 +11,22 @@ use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\SuggestionsController;
 
-use App\Http\Controllers\RecordController;
+
+use App\Http\Controllers\StaffHomeController;
+use App\Http\Controllers\RecordBirthController;
+use App\Http\Controllers\RecordMarriageController;
+use App\Http\Controllers\RecordFatherDeathController;
+use App\Http\Controllers\RecordScholarshipController;
+use App\Http\Controllers\RecordBusinessController;
+use App\Http\Controllers\RecordCenomarController;
+use App\Http\Controllers\RecordAppointmentController;
+use App\Http\Controllers\RecordSuggestionsController;
+
+
+
+
+
+
 // use App\Http\Controllers\StaffHomeController;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\MailController;
@@ -93,6 +108,8 @@ Route::get('/suggestion', function () {
 });
 
 
+
+
 Auth::routes();
 
 
@@ -133,16 +150,38 @@ Route::get('birthDetails', [BirthController::class, 'index']);
 Route::get('marriageDetails', [MarriageController::class, 'index']);
 Route::get('cenomarDetails', [CenomarController::class, 'index']);
 Route::get('fatherDeathDetails', [FatherDeathController::class, 'index']);
+Route::get('businessDetails', [BusinessController::class, 'index']);
 Route::get('scholarshipDetails', [ScholarshipController::class, 'index']);
 Route::get('appointmentDetails', [AppointmentController::class, 'index']);
 Route::get('suggestionsDetails', [SuggestionsController::class, 'index']);
-Route::get('businessDetails', [BusinessController::class, 'index']);
 
 
 
-//Route for indexes nga adtuan sa staff
-Route::get('/home', [RecordController::class, 'index'])->name('home'); 
+//Route for indexes nga adtuan sa staff 
+ Route::get('/staffHome', [StaffHomeController::class, 'index'])->name('staffHome'); 
+ Route::get('/home', [StaffHomeController::class, 'index'])->name('home'); 
+ 
+ //records from the database
+Route::get('/birthRequest', [RecordBirthController::class, 'index'])->name('birthRequest'); 
+Route::get('/marriageRequest', [RecordMarriageController::class, 'index'])->name('marriageRequest'); 
+Route::get('/cenomarRequest', [RecordCenomarController::class, 'index'])->name('cenomarRequest'); 
+Route::get('/fatherDeathRequest', [RecordFatherDeathController::class, 'index'])->name('fatherDeathRequest'); 
+Route::get('/scholarshipRequest', [RecordScholarshipController::class, 'index'])->name('scholarshipRequest'); 
+Route::get('/businessPermitRequest', [RecordBusinessController::class, 'index'])->name('businessPermitRequest'); 
+Route::get('/appointmentRequest', [RecordAppointmentController::class, 'index'])->name('appointmentRequest'); 
+Route::get('/suggestionsRequest', [RecordSuggestionsController::class, 'index'])->name('suggestionsRequest'); 
+
+
+
 // Route::get('/marriageHome', [RecordController::class, 'marriageHome'])->name('marriageHome'); 
+
+
+
+// Route::get('/dashboard', function () {
+//     return view('staffHome');
+// })->middleware(['auth', 'verified'])->name('staffHome');
+
+// // require __DIR__.'/auth.php';
 
 
 //for email
