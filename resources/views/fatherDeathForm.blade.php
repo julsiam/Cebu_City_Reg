@@ -311,12 +311,9 @@
 
                                 <h3>Additional Information</h3>
                                 <div class="field-wrap">
-                                    <p class="note">Please provide your email address for the update of your request.
-                                    </p>
-                                    <label>
-                                        Your Email Address<span class="req">*</span>
-                                    </label>
-                                    <input name="email" type="email" required autocomplete="off" />
+                                    <p class="note">Please provide your Mobile Number for the update of your request.</p>
+                                    <label for="phone">Tel/Mobile Number<span class="req">*</span></label>
+                                    <input type="tel" id="phone" pattern="[0-9]{11}" placeholder="09123456789" name="phone" requiredautocomplete="off" />
                                 </div>
 
                                 <div class="verifyBtn">

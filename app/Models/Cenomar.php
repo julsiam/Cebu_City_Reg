@@ -25,7 +25,7 @@ class Cenomar extends Eloquent
         'mmname', 
         'mlname', 
         'purpose',
-        'email'
+        'phone'
     ];
 }
 //birthForm and birth index added

@@ -26,7 +26,7 @@ class Birth extends Eloquent
         'mlname', 
         'lateReg', 
         'purpose',
-        'email'
+        'phone'
     ];
 }
 //birthForm and birth index added

@@ -21,9 +21,9 @@ class FatherDeath extends Eloquent
         'flname', 
         'deathdate', 
         'deathplace', 
-        'latereg', 
+        'lateReg', 
         'purpose',
-        'email'
+        'phone'
     ];
 }
 //birthForm and birth index added

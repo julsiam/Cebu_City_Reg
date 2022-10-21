@@ -30,10 +30,9 @@ class MarriageController extends Controller
         $marriageDetails->slname = $request->get('slname');
         $marriageDetails->marriageDate = $request->get('marriageDate');
         $marriageDetails->marriageplace = $request->get('marriageplace');
-        $marriageDetails->lateReg = $request->get('lateReg');
         $marriageDetails->purpose = $request->get('purpose');
         $marriageDetails->legalProceedings = $request->get('legalProceedings');
-        $marriageDetails->email = $request->get('email');
+        $marriageDetails->phone = $request->get('phone');
         $marriageDetails->status = ($status);
         $marriageDetails->save();
         return redirect('marriageDetails'); //ig ka save sa db,, muredirect sa birthDetails nga value nga gidefine sa route nga 'index' ang adtuan
@@ -43,5 +42,35 @@ class MarriageController extends Controller
     {
         return view('success'); //mao ni ang index nga ireturn
     }
+
+    public function showMarriageData($id)
+    {
+        $marriage = Marriage::find($id);
+        return view('statusMarriage', ['marriage'=>$marriage]);
+    }
+
+    public function editMarriage(Request $request)
+    {
+        $marriageDetails=Marriage::find($request->id);
+        $marriageDetails->sex = $request->sex;
+        $marriageDetails->fname = $request->fname;
+        $marriageDetails->mname = $request->mname;
+        $marriageDetails->lname = $request->lname;
+        $marriageDetails->birthdate = $request->birthdate;
+        $marriageDetails->birthplace = $request->birthplace;
+        $marriageDetails->idtype = $request->idtype;
+        $marriageDetails->sfname = $request->sfname;
+        $marriageDetails->smname = $request->smname;
+        $marriageDetails->slname = $request->slname;
+        $marriageDetails->marriageDate = $request->marriageDate;
+        $marriageDetails->marriageplace = $request->marriageplace;
+        $marriageDetails->purpose = $request->purpose;
+        $marriageDetails->legalProceedings = $request->legalProceedings;
+        $marriageDetails->phone = $request->phone;
+        $marriageDetails->status = $request->status;
+        $marriageDetails->save();
+        return redirect ('marriageRequest');
+    }
+
 
 }

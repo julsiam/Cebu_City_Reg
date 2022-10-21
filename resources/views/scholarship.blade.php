@@ -159,18 +159,11 @@
 
                                 <div class="field-wrap">
                                     <label for="phone">Tel/Mobile Number<span class="req">*</span></label>
-                                    <input type="text" id="phone" name="phone" requiredautocomplete="off" />
+                                    <input type="tel" id="phone" pattern="[0-9]{11}" placeholder="09123456789" name="phone" requiredautocomplete="off" />
                                 </div>
                             </div>
 
                             <div class="top-row">
-                                <div class="field-wrap">
-                                    <label>
-                                        Email Address<span class="req">*</span>
-                                    </label>
-                                    <input name="email" type="email" required autocomplete="off" />
-                                </div>
-
                                 <div class="field-wrap">
                                     <label>
                                         Present Address<span class="req">*</span>
@@ -290,7 +283,8 @@
 
                                 <div class="field-wrap">
                                     <label for="phone">Tel/Mobile Number<span class="req">*</span></label>
-                                    <input type="text" id="phone" name="fatherPhone" requiredautocomplete="off" />
+                                    <input type="tel" id="phone" pattern="[0-9]{11}" placeholder="09123456789" name="fatherPhone" requiredautocomplete="off" />
+
                                 </div>
                             </div>
 
@@ -348,7 +342,8 @@
                                 </div>
 
                                 <div class="field-wrap">
-                                    <input type="text" id="phone" name="motherPhone" requiredautocomplete="off" />
+                                    <label for="phone">Tel/Mobile Number<span class="req">*</span></label>
+                                    <input type="tel" id="phone" pattern="[0-9]{11}" placeholder="09123456789" name="motherPhone" requiredautocomplete="off" />
                                 </div>
                             </div>
 

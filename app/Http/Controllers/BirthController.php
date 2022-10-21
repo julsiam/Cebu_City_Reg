@@ -34,7 +34,7 @@ class BirthController extends Controller
         $birthDetails->mlname = $request->get('mlname');
         $birthDetails->lateReg = $request->get('lateReg');
         $birthDetails->purpose = $request->get('purpose');
-        $birthDetails->email = $request->get('email');
+        $birthDetails->phone = $request->get('phone');
         $birthDetails->status = ($status);
         $birthDetails->save();
         return redirect('birthDetails'); //ig ka save sa db,, muredirect sa birthDetails nga value nga gidefine sa route nga 'index' ang adtuan
@@ -45,45 +45,34 @@ class BirthController extends Controller
         return view('success'); //mao ni ang index nga ireturn
     }
 
+    public function showBirthData($id)
+    {
+        $birth = Birth::find($id);
+        return view('statusBirth', ['birth'=>$birth]);
+    }
 
-    // public function edit($id)
-    // {
-    //     $car = Birth::find($id);
-    //     return view('caredit', compact('car', 'id'));
-    // }
+    public function editBirth(Request $request)
+    {
+        $birthDetails=Birth::find($request->id);
+        $birthDetails->sex = $request->sex;
+        $birthDetails->fname = $request->fname;
+        $birthDetails->mname = $request->mname;
+        $birthDetails->lname = $request->lname;
+        $birthDetails->birthdate = $request->birthdate;
+        $birthDetails->birthplace = $request->birthplace;
+        $birthDetails->idtype = $request->idtype;
+        $birthDetails->ffname = $request->ffname;
+        $birthDetails->fmname = $request->fmname;
+        $birthDetails->flname = $request->flname;
+        $birthDetails->mfname = $request->mfname;
+        $birthDetails->mmname = $request->mmname;
+        $birthDetails->mlname = $request->mlname;
+        $birthDetails->lateReg = $request->lateReg;
+        $birthDetails->purpose = $request->purpose;
+        $birthDetails->phone = $request->phone;
+        $birthDetails->status = $request->status;
+        $birthDetails->save();
+        return redirect ('birthRequest');
+    }
 
-    // public function update(Request $request, $id)
-    // {
-    //     $car = Car::find($id);
-    //     $car->carcompany = $request->get('carcompany');
-    //     $car->model = $request->get('model');
-    //     $car->price = $request->get('price');
-    //     $car->save();
-    //     return redirect('car')->with('success', 'Car has been successfully update');
-    // }
-
-    // public function destroy($id)
-    // {
-    //     $car = Car::find($id);
-    //     $car->delete();
-    //     return redirect('car')->with('success', 'Car has been  deleted');
-    // }
-
-
-
-
-    // public function store(Request $request)
-    // {
-    //     $car = new Car();
-    //     $car->carcompany = $request->get('carcompany');
-    //     $car->model = $request->get('model');
-    //     $car->price = $request->get('price');
-    //     $car-> save();
-    //     return redirect('car')->with('success', 'Car has been successfully added');
-    // }
-    // public function index()
-    // {
-    //     $cars=Car::all();
-    //     return view('carindex',compact('cars'));
-    // }
 }

@@ -108,8 +108,6 @@ Route::get('/suggestion', function () {
 });
 
 
-
-
 Auth::routes();
 
 
@@ -117,25 +115,37 @@ Auth::routes();
 //for Birth Cert
 Route::get('addBirth', [BirthController::class, 'create']);
 Route::post('addBirth', [BirthController::class, 'store']); 
+Route::get('editBirth/{id}', [BirthController::class, 'showBirthData']);
+Route::post('updateBirth', [BirthController::class, 'editBirth']);
 //for Marriage Cert
 Route::get('addMarriage', [MarriageController::class, 'create']);
 Route::post('addMarriage', [MarriageController::class, 'store']); 
+Route::get('editMarriage/{id}', [MarriageController::class, 'showMarriageData']);
+Route::post('updateMarriage', [MarriageController::class, 'editMarriage']);
 
 //for Cenomar Cert
 Route::get('addCenomar', [CenomarController::class, 'create']);
 Route::post('addCenomar', [CenomarController::class, 'store']);
+Route::get('editCenomar/{id}', [CenomarController::class, 'showCenomarData']);
+Route::post('updateCenomar', [CenomarController::class, 'editCenomar']);
 
 //for Father Death Cert
 Route::get('addFatherDeath', [FatherDeathController::class, 'create']);
 Route::post('addFatherDeath', [FatherDeathController::class, 'store']);
+Route::get('editFatherDeath/{id}', [FatherDeathController::class, 'showFatherDeathData']);
+Route::post('updateFatherDeath', [FatherDeathController::class, 'editFatherDeath']);
 
 //for Scholarship Cert
 Route::get('addScholarship', [ScholarshipController::class, 'create']);
 Route::post('addScholarship', [ScholarshipController::class, 'store']);
+Route::get('editScholarship/{id}', [ScholarshipController::class, 'showScholarshipData']);
+Route::post('updateScholarship', [ScholarshipController::class, 'editScholarship']);
 
 //for Business Permit
 Route::get('addBusiness', [BusinessController::class, 'create']);
 Route::post('addBusiness', [BusinessController::class, 'store']);
+Route::get('editBusiness/{id}', [BusinessController::class, 'showBusinessData']);
+Route::post('updateBusiness', [BusinessController::class, 'editBusiness']);
 
 //for Appointment
 Route::get('addAppointment', [AppointmentController::class, 'create']);
@@ -154,7 +164,6 @@ Route::get('businessDetails', [BusinessController::class, 'index']);
 Route::get('scholarshipDetails', [ScholarshipController::class, 'index']);
 Route::get('appointmentDetails', [AppointmentController::class, 'index']);
 Route::get('suggestionsDetails', [SuggestionsController::class, 'index']);
-
 
 
 //Route for indexes nga adtuan sa staff 

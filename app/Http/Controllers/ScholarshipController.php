@@ -28,7 +28,6 @@ class ScholarshipController extends Controller
         $scholarshipDetails->civilStatus = $request->get('civilStatus');
         $scholarshipDetails->citizenship = $request->get('citizenship');
         $scholarshipDetails->phone = $request->get('phone');
-        $scholarshipDetails->email = $request->get('email');
         $scholarshipDetails->presentAdd = $request->get('presentAdd');
         $scholarshipDetails->zipCode = $request->get('zipCode');
         $scholarshipDetails->schoolSector = $request->get('schoolSector');
@@ -60,5 +59,51 @@ class ScholarshipController extends Controller
     public function index()
     {
         return view('success'); //mao ni ang index nga ireturn
+    }
+
+    public function showScholarshipData($id)
+    {
+        $scholarship = Scholarship::find($id);
+        return view('statusScholarship', ['scholarship' => $scholarship]);
+    }
+
+    public function editScholarship(Request $request)
+    {
+        $scholarshipDetails = Scholarship::find($request->id);
+        $scholarshipDetails->fname = $request->fname;
+        $scholarshipDetails->mname = $request->mname;
+        $scholarshipDetails->lname = $request->lname;
+        $scholarshipDetails->birthdate = $request->birthdate;
+        $scholarshipDetails->birthplace = $request->birthplace;
+        $scholarshipDetails->sex = $request->sex;
+        $scholarshipDetails->civilStatus = $request->civilStatus;
+        $scholarshipDetails->citizenship = $request->citizenship;
+        $scholarshipDetails->phone = $request->phone;
+        $scholarshipDetails->presentAdd = $request->presentAdd;
+        $scholarshipDetails->zipCode = $request->zipCode;
+        $scholarshipDetails->schoolSector = $request->schoolSector;
+        $scholarshipDetails->schoolLastAttendee = $request->schoolLastAttendee;
+        $scholarshipDetails->schoolAdd = $request->schoolAdd;
+        $scholarshipDetails->ffname = $request->ffname;
+        $scholarshipDetails->fatherAddress = $request->fatherAddress;
+        $scholarshipDetails->fatherPhone = $request->fatherPhone;
+        $scholarshipDetails->fatherOccupation = $request->fatherOccupation;
+        $scholarshipDetails->fatherEmployer = $request->fatherEmployer;
+        $scholarshipDetails->fatherEmployerAdd = $request->fatherEmployerAdd;
+        $scholarshipDetails->fatherEdu = $request->fatherEdu;
+        $scholarshipDetails->mfname = $request->mfname;
+        $scholarshipDetails->motherAdd = $request->motherAdd;
+        $scholarshipDetails->motherPhone = $request->motherPhone;
+        $scholarshipDetails->motherOccupation = $request->motherOccupation;
+        $scholarshipDetails->motherEmployer = $request->motherEmployer;
+        $scholarshipDetails->motherEmployerAdd = $request->motherEmployerAdd;
+        $scholarshipDetails->motherEdu = $request->motherEdu;
+        $scholarshipDetails->siblings = $request->siblings;
+        $scholarshipDetails->pantawidMember = $request->pantawidMember;
+        $scholarshipDetails->academicFile = $request->academicFile;
+        $scholarshipDetails->incomeFile = $request->incomeFile;
+        $scholarshipDetails->status = $request->status;
+        $scholarshipDetails->save();
+        return redirect('scholarshipRequest');
     }
 }

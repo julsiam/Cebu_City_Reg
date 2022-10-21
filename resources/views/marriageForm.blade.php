@@ -343,21 +343,6 @@
                                 </select>
                             </div><br>
 
-                            <div class="field-wrap">
-                                <h3>Late Registration</h3>
-                                <p class="note">The certificate you are requesting for may not be digitized yet by
-                                    the PSA if it was
-                                    registered late. There is a chance that you will receive a Certificate of Negative
-                                    Intact if you continue.
-                                </p>
-                                <select name="lateReg" id="Late Registration" required autocomplete="off">
-                                    <option value=""> -Do you want to proceed?-</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-
-                            </div>
-
                             <h3>The Purpose of your Request...</h3>
                             <div class="field-wrap">
                                 <select name="purpose" id="Purpose of Request" required autocomplete="off">
@@ -390,12 +375,9 @@
 
                             <h3>Additional Information</h3>
                             <div class="field-wrap">
-                                <p class="note">Please provide your email address for the update of your request.
-                                </p>
-                                <label>
-                                    Your Email Address<span class="req">*</span>
-                                </label>
-                                <input name="email" type="email" required autocomplete="off" />
+                                <p class="note">Please provide your Mobile Number for the update of your request.</p>
+                                <label for="phone">Tel/Mobile Number<span class="req">*</span></label>
+                                <input type="tel" id="phone" pattern="[0-9]{11}" placeholder="09123456789" name="phone" requiredautocomplete="off" />
                             </div>
 
                             <div class="verifyBtn">

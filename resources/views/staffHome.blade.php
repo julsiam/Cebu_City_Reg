@@ -135,7 +135,7 @@
             </a>
 
 
-            <a href="{{ url('/deathCertWho') }}" class="data-card">
+            <a href="{{ url('/fatherDeathRequest') }}" class="data-card">
                 <h3><img style="width:120px" src="image/death.png" alt=""></h3>
                 <h4>Death Certificate</h4>
                 <span class="link-text">
@@ -143,7 +143,7 @@
                 </span>
             </a>
 
-            <a href="{{ url('/fatherDeathRequest') }}" class="data-card">
+            <a href="{{ url('/scholarshipRequest') }}" class="data-card">
                 <h3><img style="width:120px" src="image/scholarship.png" alt=""></h3>
                 <h4>Scholarship</h4>
                 <span class="link-text">

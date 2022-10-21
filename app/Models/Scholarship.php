@@ -20,7 +20,6 @@ class Scholarship extends Eloquent
         'civilStatus', 
         'citizenship', 
         'phone', 
-        'email', 
         'presentAdd', 
         'zipCode', 
         'schoolSector', 
