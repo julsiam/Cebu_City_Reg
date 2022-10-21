@@ -118,7 +118,7 @@
 
                             <div class="field-wrap">
                                 <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="Phone Number" requiredautocomplete="off" />
+                                <input type="tel" id="phone" pattern="[0-9]{11}" placeholder="09123456789" name="phone" requiredautocomplete="off" />
                             </div>
 
                             <div class="field-wrap">

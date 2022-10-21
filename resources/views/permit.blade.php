@@ -110,16 +110,10 @@
                                     <label>
                                         Date of Application<span class="req">*</span>
                                     </label>
-                                    <input name="applicationDate" id="Date of Application:" type="text" required
-                                        autocomplete="off" />
+                                    <input name="applicationDate" id="date" type="date" required
+                                        autocomplete="off">
                                 </div>
 
-                                {{-- <div class="field-wrap">
-                                    <label>
-                                        DTI/SEC/CDA Reg.No.<span id="nameError" class="req"></span>
-                                    </label>
-                                    <input name="dtiNo2" id="DTI/SEC/CDA Registration Number" type="text" />
-                                </div> --}}
                                 <div class="field-wrap">
                                     <label>
                                         Tin No<span class="req">*</span>
@@ -135,8 +129,8 @@
                                     <label>
                                         From<span class="req">*</span>
                                     </label>
-                                    <input name="from" id="Ammendment From" minlength="2" maxlength="25"
-                                        name="ammendFrom" type="text" required autocomplete="off" />
+                                    <input name="ammendFrom" id="Ammendment From" minlength="2" maxlength="25"
+                                        type="text" required autocomplete="off" />
 
                                 </div>
 
@@ -153,11 +147,10 @@
                             <div class="top-row">
                                 <div class="field-wrap">
                                     <label>
-                                        Full Name<span class="req">*</span>
+                                        First Name<span class="req">*</span>
                                     </label>
                                     <input name="fname" id="First Name" minlength="2" maxlength="25"
                                         name="fname" type="text" required autocomplete="off" />
-
                                 </div>
 
                                 <div class="field-wrap">
@@ -179,19 +172,10 @@
 
                             <div class="field-wrap">
                                 <label>
-                                    Trade Name/Franchise<span class="req">*</span>
+                                    Trade Name/Franchise
                                 </label>
                                 <input name="tradeName" id="Trade Name/Franchise:" type="text" required
                                     autocomplete="off" />
-
-                            </div>
-
-                            <div class="field-wrap">
-                                <label>
-                                    Choose Option for Business Permit<span class="req">*</span>
-                                </label>
-                                <input name="permitOption" id="Ammendment To" minlength="2" maxlength="25"
-                                    type="text" required autocomplete="off" />
                             </div>
 
                             <div class="field-wrap">
@@ -209,91 +193,74 @@
                                     section unless certain Information have changed.</p> <br>
                                 <div class="field-wrap">
                                     <label>
-                                        Business Address<span class="req">*</span>
+                                        Business Address
                                     </label>
-                                    <input name="businessAdd" id="Business Address" minlength="2" maxlength="25"
-                                        type="text" required autocomplete="off" />
+                                    <input name="businessAdd" id="Business Address" type="text" />
 
                                 </div>
 
                                 <div class="field-wrap">
                                     <label>
-                                        Business Postal Code<span id="nameError" class="req"></span>
+                                        Business Postal Code
                                     </label>
-                                    <input name="postalCode" id="Postal Code" minlength="2" maxlength="25"
-                                        type="text" />
+                                    <input name="postalCode" id="Postal Code" type="text" />
                                 </div>
 
                                 <div class="field-wrap">
                                     <label for="phone">Business Hotline No.</label>
-                                    <input type="businessHotline" id="phone" name="Phone Number" requiredautocomplete="off" />
+                                    <input type="tel" id="phone" pattern="[0-9]{11}"
+                                        placeholder="09123456789" name="businessHotline" />
                                 </div>
-                            </div>
-
-                            <div class="field-wrap">
-                                <label>
-                                    Business Email Address<span class="req">*</span>
-                                </label>
-                                <input name="businessEmail" type="email" required autocomplete="off" />
                             </div>
 
                             <div class="top-row">
                                 <div class="field-wrap">
                                     <label>
-                                        Owner's Address<span class="req">*</span>
+                                        Owner's Address
                                     </label>
                                     <input name="ownerAdd" id="Owner Address" minlength="2" maxlength="25"
-                                        type="text" required autocomplete="off" />
-
-                                </div>
-
-                                <div class="field-wrap">
-                                    <label>
-                                        Owner Postal Code<span id="nameError" class="req"></span>
-                                    </label>
-                                    <input name="ownerPostalCode" id="Owner Postal Code" minlength="2" maxlength="25"
                                         type="text" />
                                 </div>
 
                                 <div class="field-wrap">
+                                    <label>
+                                        Owner Postal Code
+                                    </label>
+                                    <input name="ownerPostalCode" id="Owner Postal Code" type="text" />
+                                </div>
+
+                                <div class="field-wrap">
                                     <label for="phone">Mobile Number</label>
-                                    <input type="ownerHotline" id="phone" name="Phone Number" requiredautocomplete="off" />
+                                    <input type="tel" id="phone" pattern="[0-9]{11}"
+                                        placeholder="09123456789" name="ownerHotline" />
                                 </div>
                             </div>
 
                             <div class="field-wrap">
                                 <label>
-                                    In case of emergency provide name of contact person:<span class="req">*</span>
+                                    In case of emergency provide name of contact person:
                                 </label>
                                 <input name="contactPerson" id="Emergency Contact Person"
-                                    placeholder="Full Name of Contact Person" minlength="2" maxlength="25"
-                                    type="text" required autocomplete="off" />
+                                    placeholder="Full Name of Contact Person" type="text" />
                             </div>
 
-                            <div class="top-row">
-                                <div class="field-wrap">
-                                    <label for="phone">Tel/Mobile Number<span class="req">*</span></label>
-                                    <input type="tel" id="phone" name="emergencyContact" requiredautocomplete="off" />
-                                </div>
-                            </div>
 
                             <div class="field-wrap">
-                                <label>
-                                    Email Address<span class="req">*</span>
-                                </label>
-                                <input name="contactPersonEmail" type="email" required autocomplete="off" />
+                                <label for="phone">Tel/Mobile number</label>
+                                <input type="tel" id="phone" pattern="[0-9]{11}" placeholder="09123456789"
+                                    name="emergencyContact" />
                             </div>
 
                             <div class="field-wrap">
                                 <label>
                                     Business Area<span class="req">*</span>
                                 </label>
-                                <input name="businessArea" id="Last Name" minlength="2" maxlength="25" type="text"
-                                    required autocomplete="off" />
+                                <input name="businessArea" id="Last Name" type="text" required
+                                    autocomplete="off" />
                             </div>
 
                             <div class="field-wrap">
-                                <label for="quantity">Total No. of employees in Establishment</label>
+                                <label for="quantity">Total No. of Employees in Establishment</label>
                                 <input type="number" id="Number of Employees" name="employeeTotal">
                             </div>
 
@@ -303,86 +270,81 @@
                                     Rented</p> <br>
                                 <div class="field-wrap">
                                     <label>
-                                        Full Name:<span class="req">*</span>
+                                        Full Name
                                     </label>
-                                    <input name="lessorName" id="Owner Address" minlength="2" maxlength="25"
-                                        type="text" required autocomplete="off" />
+                                    <input name="lessorName" id="Owner Address" type="text" />
 
                                 </div>
 
                                 <div class="field-wrap">
                                     <label>
-                                        Address<span id="nameError" class="req">*</span>
+                                        Address
                                     </label>
-                                    <input name="lessorAdd" id="Owner Postal Code" minlength="2" maxlength="25"
-                                        type="text" />
+                                    <input name="lessorAdd" id="Owner Postal Code" type="text" />
                                 </div>
 
                                 <div class="field-wrap">
-                                    <label for="phone">Mobile Number<span id="nameError" class="req">*</span>
+                                    <label for="phone">Mobile Number
                                     </label>
-                                    <input type="tel" id="phone" name="lessorPhone" requiredautocomplete="off" />
+                                    <input type="tel" id="phone" pattern="[0-9]{11}"
+                                        placeholder="09123456789" name="lessorPhone" />
                                 </div>
                             </div>
 
                             <div class="field-wrap">
                                 <label>
-                                    Email Address<span class="req">*</span>
+                                    Email Address
                                 </label>
-                                <input name="lessorEmail" type="email" required autocomplete="off" />
+                                <input name="lessorEmail" type="email" />
                             </div>
 
                             <div class="field-wrap">
                                 <div class="field-wrap">
-                                    <label for="quantity">Monthly Rented<span class="req">*</span></label>
+                                    <label for="quantity">Monthly Rented</label>
                                     <input type="number" id="Monthly Rented" name="monthlyRent">
                                 </div>
                             </div>
 
-                            <h3>Requirements<span class="req">*</span></h3> <br>
+                            <h3>Requirements</h3> <br>
                             <div class="field-wrap">
                                 <p>Upload File of Filled-Up Business Permit Application Form in PDF (.pdf) File Format
                                 </p>
-                                <label for="myfile">Filled-Up Business Permit Application Form <span
-                                        class="req">*</span></label>
+                                <label for="myfile">Filled-Up Business Permit Application Form </label>
                                 <input type="file" id="myfile" name="filledupFile">
                             </div>
                             <div class="field-wrap">
                                 <p>Upload File of Occupancy Permit (For New Applications) by Municipal Engineer&#39;s
                                     Office in PDF (.pdf) File Format (optional, if
                                     required)</p>
-                                <label for="myfile">File of Occupancy Permit<span class="req">*</span></label>
+                                <label for="myfile">File of Occupancy Permit</label>
                                 <input type="file" id="myfile" name="occupancyFile">
                             </div>
                             <div class="field-wrap">
                                 <p>Upload File of Barangay Business Clearance/Cedula by Barangay/Municipal
                                     Treasurer&#39;s Office (MTO) in PDF (.pdf) File
                                     Format (optional, if required)</p>
-                                <label for="myfile"> File of Barangay Business Clearance/Cedula<span
-                                        class="req">*</span></label>
+                                <label for="myfile"> File of Barangay Business Clearance/Cedula></label>
                                 <input type="file" id="myfile" name="brgyClearanceFile">
                             </div>
                             <div class="field-wrap">
                                 <p>Upload File of Sanitary Permit/Health Certificate by Municipal Health Office (MHO) in
                                     PDF (.pdf) File Format (optional, if
                                     required)</p>
-                                <label for="myfile">File of Sanitary Permit/Health Certificate<span
-                                        class="req">*</span></label>
+                                <label for="myfile">File of Sanitary Permit/Health Certificate</label>
                                 <input type="file" id="myfile" name="sanitaryFile">
                             </div>
                             <div class="field-wrap">
                                 <p>Upload File of Valid Fire Safety Inspection Certificate by Bureau of Fire Protection
                                     (BFP) in PDF (.pdf) File Format (optional, if
                                     required)</p>
-                                <label for="myfile"> File of Valid Fire Safety Inspection Certificate<span
-                                        class="req">*</span></label>
+                                <label for="myfile"> File of Valid Fire Safety Inspection Certificate</label>
                                 <input type="file" id="myfile" name="fireSafetyFile">
                             </div>
                             <div class="field-wrap">
                                 <p>Upload File of &quot;Other Document/s if required by law&quot; in PDF (.pdf) File
                                     Format (optional, if required)</p>
-                                <label for="myfile">&quot;Other Document/s<span class="req">*</span></label>
-                                <input type="file" id="myfile" name="otherFile">
+                                <label for="myfile">&quot;Other Document/slabel>
+                                    <input type="file" id="myfile" name="otherFile">
                             </div>
 
                             <div class="verifyBtn">

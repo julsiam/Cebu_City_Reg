@@ -150,10 +150,13 @@ Route::post('updateBusiness', [BusinessController::class, 'editBusiness']);
 //for Appointment
 Route::get('addAppointment', [AppointmentController::class, 'create']);
 Route::post('addAppointment', [AppointmentController::class, 'store']);
+Route::get('editAppointment/{id}', [AppointmentController::class, 'showAppointmentData']);
+Route::post('updateAppointment', [AppointmentController::class, 'editAppointment']);
 
 //for Suggestions
 Route::get('addSuggestions', [SuggestionsController::class, 'create']);
 Route::post('addSuggestions', [SuggestionsController::class, 'store']);
+
 
 // Route for the function after filling out the form // gicall ang index function sa birthcontroller nga birthSucces angv mudisplay
 Route::get('birthDetails', [BirthController::class, 'index']); 

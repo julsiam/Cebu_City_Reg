@@ -85,7 +85,7 @@
 
     <section>
         <div class="wrapper">
-            <h1>{{ __('Certificate of No Marriage (CENOMAR) Requests') }}</h1>
+            <h1>{{ __('Father Death Certificate Requests') }}</h1>
             <a href="{{ url('/staffHome') }}"> <button>{{ __('Back to Dashboard') }}</button></a>
         </div>
 

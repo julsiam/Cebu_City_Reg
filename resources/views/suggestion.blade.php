@@ -89,33 +89,29 @@
                                     <label>
                                         First Name<span class="req">*</span>
                                     </label>
-                                    <input name="fname" id="First Name" minlength="2" maxlength="25" name="fname"
-                                        type="text" required autocomplete="off" />
-
+                                    <input type="text" name="fname" id="First Name" />
                                 </div>
 
                                 <div class="field-wrap">
                                     <label>
                                         Middle Name<span id="nameError" class="req"></span>
                                     </label>
-                                    <input name="mname" id="Middle Name" minlength="2" maxlength="25"
-                                        type="text" />
+                                    <input name="mname" id="Middle Name" type="text" />
                                 </div>
                                 <div class="field-wrap">
                                     <label>
                                         Last Name<span class="req">*</span>
                                     </label>
-                                    <input name="lname" id="Last Name" minlength="2" maxlength="25" type="text"
-                                        required autocomplete="off" />
+                                    <input type="text" name="lname" id="Last Name" />
 
                                 </div>
                             </div>
 
                             <div class="field-wrap">
                                 <label>
-                                    Email Address<span class="req">*</span>
+                                    Email Address
                                 </label>
-                                <input name="email" type="email" required autocomplete="off" />
+                                <input name="email" type="email" />
                             </div>
 
                             <h3>Type of Suggestion</h3>
@@ -136,7 +132,7 @@
                             </div>
 
                             <div class="verifyBtn">
-                               <button class="continueBtn">Submit</button></a>
+                                <button class="continueBtn">Submit</button></a>
                             </div>
 
                         </form>

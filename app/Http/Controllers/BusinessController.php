@@ -30,18 +30,15 @@ class BusinessController extends Controller
         $businessDetails->mname = $request->get('mname');
         $businessDetails->lname = $request->get('lname');
         $businessDetails->tradeName = $request->get('tradeName');
-        $businessDetails->permitOption = $request->get('permitOption');
         $businessDetails->incentive = $request->get('incentive');
         $businessDetails->businessAdd = $request->get('businessAdd');
         $businessDetails->postalCode = $request->get('postalCode');
         $businessDetails->businessHotline = $request->get('businessHotline');
-        $businessDetails->businessEmail = $request->get('businessEmail');
         $businessDetails->ownerAdd = $request->get('ownerAdd');
         $businessDetails->ownerPostalCode = $request->get('ownerPostalCode');
         $businessDetails->ownerHotline = $request->get('ownerHotline');
         $businessDetails->contactPerson = $request->get('contactPerson');
         $businessDetails->emergencyContact = $request->get('emergencyContact');
-        $businessDetails->contactPersonEmail = $request->get('contactPersonEmail');
         $businessDetails->businessArea = $request->get('businessArea');
         $businessDetails->employeeTotal = $request->get('employeeTotal');
         $businessDetails->lessorName = $request->get('lessorName');
@@ -63,5 +60,53 @@ class BusinessController extends Controller
     public function index()
     {
         return view('success'); //mao ni ang index nga ireturn
+    }
+
+    public function showBusinessData($id)
+    {
+        $businessPermit = BusinessPermit::find($id);
+        return view('statusBusinessPermit', ['businessPermit' => $businessPermit]);
+    }
+
+    public function editBusiness(Request $request)
+    {
+        $businessDetails = BusinessPermit::find($request->id);
+        $businessDetails->businessType = $request->businessType;
+        $businessDetails->dtiNo = $request->dtiNo;
+        $businessDetails->paymentMode = $request->paymentMode;
+        $businessDetails->applicationDate = $request->applicationDate;
+        $businessDetails->tin = $request->tin;
+        $businessDetails->ammendFrom = $request->ammendFrom;
+        $businessDetails->ammendTo = $request->ammendTo;
+        $businessDetails->fname = $request->fname;
+        $businessDetails->mname = $request->mname;
+        $businessDetails->lname = $request->lname;
+        $businessDetails->tradename = $request->tradename;
+        $businessDetails->permitOption = $request->permitOption;
+        $businessDetails->incentive = $request->incentive;
+        $businessDetails->businessAdd = $request->businessAdd;
+        $businessDetails->postalCode = $request->postalCode;
+        $businessDetails->businessHotline = $request->businessHotline;
+        $businessDetails->ownerAdd = $request->ownerAdd;
+        $businessDetails->ownerPostalCode = $request->ownerPostalCode;
+        $businessDetails->ownerHotline = $request->ownerHotline;
+        $businessDetails->contactPerson = $request->contactPerson;
+        $businessDetails->emergencyContact = $request->emergencyContact;
+        $businessDetails->businessArea = $request->businessArea;
+        $businessDetails->employeeTotal = $request->employeeTotal;
+        $businessDetails->lessorName = $request->lessorName;
+        $businessDetails->lessorAdd = $request->lessorAdd;
+        $businessDetails->lessorPhone = $request->lessorPhone;
+        $businessDetails->lessorEmail = $request->lessorEmail;
+        $businessDetails->monthlyRent = $request->monthlyRent;
+        $businessDetails->filledupFile = $request->filledupFile;
+        $businessDetails->occupancyFile = $request->occupancyFile;
+        $businessDetails->brgyClearanceFile = $request->brgyClearanceFile;
+        $businessDetails->sanitaryFile = $request->sanitaryFile;
+        $businessDetails->fireSafetyFile = $request->fireSafetyFile;
+        $businessDetails->otherFile = $request->otherFile;
+        $businessDetails->status = $request->status;
+        $businessDetails->save();
+        return redirect('businessPermitRequest');
     }
 }

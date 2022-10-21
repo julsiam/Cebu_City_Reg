@@ -121,7 +121,7 @@
                 <tbody>
                     @foreach ($cenomar as $cenomar)
                         <tr style="  border: 1px solid black">
-                            <td >{{ $cenomar->sex }}</td>
+                            <td>{{ $cenomar->sex }}</td>
                             <td>{{ $cenomar->fname }}</td>
                             <td>{{ $cenomar->mname }}</td>
                             <td>{{ $cenomar->lname }}</td>
@@ -144,5 +144,4 @@
             </table>
         </div>
     </section>
-
 @endsection

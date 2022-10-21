@@ -17,7 +17,7 @@ class Appointment extends Eloquent
         'email',
         'phone', 
         'address', 
-        'firstVisit', 
+        'visitOften', 
         'appointmentSubject', 
         'appointmenttDate', 
         'mostPrefTime', 
