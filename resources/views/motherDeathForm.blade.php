@@ -86,7 +86,7 @@
             <div class="form">
                 <div class="tab-content">
                     <div id="signup">
-                        <h1><span style="color:#314964">| <b> Death Certificate</b> </span></h1>
+                        <h1><span style="color:#314964">| <b>Mother Death Certificate</b> </span></h1>
                         <h3>Your Information</h3>
                         <form action="register/motherDeathRegister" method="post" name="registration">
                             {{ csrf_field() }}
@@ -315,6 +315,14 @@
                                         <option value="Late Registration">Late Registration</option>
                                     </select>
                                 </div>
+
+                                <h3>Additional Information</h3>
+                                <div class="field-wrap">
+                                    <p class="note">Please provide your Mobile Number for the update of your request.</p>
+                                    <label for="phone">Tel/Mobile Number<span class="req">*</span></label>
+                                    <input type="tel" id="phone" pattern="[0-9]{11}" placeholder="09123456789" name="phone" requiredautocomplete="off" />
+                                </div>
+
 
                                 <div class="verifyBtn">
                                     <button class="continueBtn">Submit</button>

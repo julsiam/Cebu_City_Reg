@@ -62,7 +62,7 @@
 
                 <li>
                     <a href="./loginpage.html">
-                        <span class="icon"><i class="fa fa-sign-out" aria-hidden="true"></i> </span>
+                        <span class="icon"><i class="fa fa-sign-in" aria-hidden="true"></i> </span>
                         <span class="title">Sign Out</span>
                     </a>
                 </li>

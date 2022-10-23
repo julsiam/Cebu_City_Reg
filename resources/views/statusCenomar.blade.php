@@ -8,13 +8,25 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <style>
+        button {
+            border: none;
+            background-color: #314964;
+            color: white;
+            padding: 8px;
+            margin: 12px;
+        }
+
+        #status {
+            background-color: greenyellow;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <h2>Edit Status for Birth Request</h2><br />
-        <div class="container">
-        </div>
+        <h1>{{ __('Status Update for Cenomar Request') }}</h1>
         <form action="/updateCenomar" method="POST">
             @csrf
             <div class="row">
@@ -67,10 +79,11 @@
                         <input type="text" name="phone" readonly value="{{ $cenomar['phone'] }}"><br>
                     </label>
                     <label for="">Status:
-                        <input type="text" name="status" value="{{ $cenomar['status'] }}"><br>
+                        <input type="text" name="status" id="status" value="{{ $cenomar['status'] }}"><br>
                     </label><br>
-                    <button type="submit" style="background-color:#314964; color:white">Update</button>
-                    <a href="/cenomarRequest"><button type="submit" style="background-color:green; color:white">Back</button></a>
+                    <button type="submit">Update</button>
+                    <a href="/cenomarRequest"><button type="submit"
+                            style="background-color:green; color:white">Back</button></a>
                 </div>
             </div>
         </form>

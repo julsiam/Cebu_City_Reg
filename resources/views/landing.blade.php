@@ -25,7 +25,7 @@
                 </li>
 
                 <li>
-                    <a href="#main" class="active">
+                    <a href="#main">
                         <span class="icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span>
                         <span class="title">Home</span>
                     </a>
@@ -39,56 +39,63 @@
                 </li>
 
                 <li>
-                    <a href="#">
-                        <span class="icon"><i class="fa fa-list-ul" aria-hidden="true"></i></span>
-                        <span class="title">About</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#products">
-                        <span class="icon"><i class="fa fa-book" aria-hidden="true"></i></span>
-
-                        <span class="title">Account</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="">
-                        <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
-                        <span class="title">Message</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./loginpage.html">
-                        <span class="icon"><i class="fa fa-sign-out" aria-hidden="true"></i> </span>
-                        <span class="title">Sign Out</span>
-                    </a>
+                    @if (Route::has('login'))
+                        @auth
+                            <a href="{{ url('/staffHome') }}">
+                                <span class="icon"><i class="fa fa-sign-out" aria-hidden="true"></i> </span>
+                                <span class="title">Back to Dashboard</span>
+                            </a>
+                        @else
+                            <a href="{{ route('login') }}">
+                                <span class="icon"><i class="fa fa-sign-in" aria-hidden="true"></i> </span>
+                                <span class="title">Sign In</span>
+                            </a>
+                        @endauth
+                    @endif
                 </li>
             </ul>
         </div>
     </div>
 
+    {{-- STOP IN HERE --}}
     <div class="main" id="main">
         <div class="topbar">
-            <div class="toggle" onclick="toggleMenu();"></div>
-            @if (Route::has('login'))
-                <div>
-                    @auth
-                        <div class="landingbtn">
-                            <a href="{{ url('/staffHome') }}"> <button class="signinBtn">Back to Dashboard</button></a>
-                        </div>
-                        
-                    @else
-                        <div class="landingbtn">
-                            <a href="{{ route('login') }}"> <button class="signinBtn">Sign in</button></a>
-                        </div>
-                    @endauth
-                </div>
-            @endif
-        </div>
+            <div class="toggle" onclick="toggleMenu();"></div> 
+            @guest
+                @if (Route::has('login'))
+                    {{-- <div class="landingbtn">
+                        <a href="{{ route('login') }}"> <button class="signinBtn">Login</button></a>
+                    </div> --}}
+                @endif
 
+                {{-- @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                </li>
+            @endif --}}
+            @else
+                <li class="nav-item dropdown" style="list-style: none">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                    data-bs-toggle="dropdown" aria-haspopup="true" style="color: white; font-weight:600"
+                    aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }}
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a style="color: #314964; font-weight:600" class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            @endguest
+
+        </div>
 
 
         <header>

@@ -79,7 +79,7 @@
             <div class="form">
                 <div class="tab-content">
                     <div id="signup">
-                        <h1><span style="color:#314964"> <b>Whose Death Certificate are you requesting for?*</b> </span>
+                        <h1><span style="color:#314964"> <b>Whose Death Certificate you are requesting for?*</b> </span>
                         </h1>
                       
                         <form action="#" method="post" name="registration">

@@ -79,7 +79,7 @@
             <div class="form">
                 <div class="tab-content">
                     <div id="signup">
-                        <h1><span style="color:#314964">| <b> Request for Your Own CENOMAR</b> </span></h1>
+                        <h1><span style="color:#314964">| <b>Certificate of No Marriage</b> </span></h1>
                         <h3>Your Information</h3>
                         <form method="post" action="{{ url('addCenomar') }}">
                             <!--sa web ni makita nga url,sa route-->
