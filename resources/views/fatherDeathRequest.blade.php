@@ -86,7 +86,7 @@
     <section>
         <div class="wrapper">
             <h1>{{ __('Father Death Certificate Requests') }}</h1>
-            <a href="{{ url('/staffHome') }}"> <button>{{ __('Back to Dashboard') }}</button></a>
+            <a href="{{ url('/deathCertRequests') }}"> <button>{{ __('Back to Death Cert Requests') }}</button></a>
         </div>
 
         <div class="tbl-header">

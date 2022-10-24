@@ -85,20 +85,29 @@
 
     <section>
         <div class="wrapper">
-            <h1>{{ __('Random Suggestions: Voice of the People') }}</h1>
-            <a href="{{ url('/staffHome') }}"> <button>{{ __('Back to Dashboard') }}</button></a>
+            <h1>{{ __('Spouse Death Certificate Requests') }}</h1>
+            <a href="{{ url('/deathCertRequests') }}"> <button>{{ __('Back to Death Cert Requests') }}</button></a>
         </div>
 
         <div class="tbl-header">
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
                     <tr>
+                        <th>Sex</th>
                         <th>First Name</th>
                         <th>Middle Name</th>
                         <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Type of Suggestion</th>
-                        <th>Details</th>
+                        <th>ID Presented</th>
+                        <th>Spouse's First Name</th>
+                        <th>Spouse's Middle Name</th>
+                        <th>Spouse's Last Name</th>
+                        <th>Place of Death</th>
+                        <th>Late Registration?</th>
+                        <th>Purpose</th>
+                        <th>Phone</th>
+                        <th>Status</th>
+                        <th>Update Status</th>
+                    </tr>
                     </tr>
                 </thead>
             </table>
@@ -107,14 +116,22 @@
         <div class="tbl-content">
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
-                    @foreach ($suggestions as $suggestions)
+                    @foreach ($spouseDeath as $spouseDeath)
                         <tr style="  border: 1px solid black">
-                            <td>{{ $suggestions->fname }}</td>
-                            <td>{{ $suggestions->mname }}</td>
-                            <td>{{ $suggestions->lname }}</td>
-                            <td>{{ $suggestions->email }}</td>
-                            <td>{{ $suggestions->suggestionType }}</td>
-                            <td>{{ $suggestions->suggestionDetails }}</td>
+                            <td>{{ $spouseDeath->sex }}</td>
+                            <td>{{ $spouseDeath->fname }}</td>
+                            <td>{{ $spouseDeath->mname }}</td>
+                            <td>{{ $spouseDeath->lname }}</td>
+                            <td>{{ $spouseDeath->idtype }}</td>
+                            <td>{{ $spouseDeath->spousefname }}</td>
+                            <td>{{ $spouseDeath->spousemname }}</td>
+                            <td>{{ $spouseDeath->spouselname }}</td>
+                            <td>{{ $spouseDeath->deathplace }}</td>
+                            <td>{{ $spouseDeath->lateReg }}</td>
+                            <td>{{ $spouseDeath->purpose }}</td>
+                            <td>{{ $spouseDeath->phone }}</td>
+                            <td>{{ $spouseDeath->status }}</td>
+                            <td><a href={{ 'editSpouseDeath/' . $spouseDeath['id'] }}>Update</a>
                         </tr>
                     @endforeach
                 </tbody>

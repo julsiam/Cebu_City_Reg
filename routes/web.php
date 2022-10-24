@@ -6,6 +6,8 @@ use App\Http\Controllers\BirthController;
 use App\Http\Controllers\MarriageController;
 use App\Http\Controllers\CenomarController;
 use App\Http\Controllers\FatherDeathController;
+use App\Http\Controllers\MotherDeathController;
+use App\Http\Controllers\SpouseDeathController;
 use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\AppointmentController;
@@ -16,6 +18,8 @@ use App\Http\Controllers\StaffHomeController;
 use App\Http\Controllers\RecordBirthController;
 use App\Http\Controllers\RecordMarriageController;
 use App\Http\Controllers\RecordFatherDeathController;
+use App\Http\Controllers\RecordMotherDeathController;
+use App\Http\Controllers\RecordSpouseDeathController;
 use App\Http\Controllers\RecordScholarshipController;
 use App\Http\Controllers\RecordBusinessController;
 use App\Http\Controllers\RecordCenomarController;
@@ -91,6 +95,14 @@ Route::get('/motherDeathForm', function () {
     return view('motherDeathForm');
 });
 
+Route::get('/spouseDeathCert', function () {
+    return view('spouseDeathCert');
+});
+
+Route::get('/spouseDeathForm', function () {
+    return view('spouseDeathForm');
+});
+
 Route::get('/scholarship', function () {
     return view('scholarship');
 });
@@ -105,6 +117,14 @@ Route::get('/appointment', function () {
 
 Route::get('/suggestion', function () {
     return view('suggestion');
+});
+
+Route::get('/deathCertRequests', function () {
+    return view('deathCertRequests');
+});
+
+Route::get('/deathCertRequests', function () {
+    return view('deathCertRequests');
 });
 
 
@@ -135,6 +155,18 @@ Route::post('addFatherDeath', [FatherDeathController::class, 'store']);
 Route::get('editFatherDeath/{id}', [FatherDeathController::class, 'showFatherDeathData']);
 Route::post('updateFatherDeath', [FatherDeathController::class, 'editFatherDeath']);
 
+//for Mother Death Cert
+Route::get('addMotherDeath', [MotherDeathController::class, 'create']);
+Route::post('addMotherDeath', [MotherDeathController::class, 'store']);
+Route::get('editMotherDeath/{id}', [MotherDeathController::class, 'showMotherDeathData']);
+Route::post('updateMotherDeath', [MotherDeathController::class, 'editMotherDeath']);
+
+//for Mother Death Cert
+Route::get('addSpouseDeath', [SpouseDeathController::class, 'create']);
+Route::post('addSpouseDeath', [SpouseDeathController::class, 'store']);
+Route::get('editSpouseDeath/{id}', [SpouseDeathController::class, 'showSpouseDeathData']);
+Route::post('updateSpouseDeath', [SpouseDeathController::class, 'editSpouseDeath']);
+
 //for Scholarship Cert
 Route::get('addScholarship', [ScholarshipController::class, 'create']);
 Route::post('addScholarship', [ScholarshipController::class, 'store']);
@@ -163,6 +195,8 @@ Route::get('birthDetails', [BirthController::class, 'index']);
 Route::get('marriageDetails', [MarriageController::class, 'index']);
 Route::get('cenomarDetails', [CenomarController::class, 'index']);
 Route::get('fatherDeathDetails', [FatherDeathController::class, 'index']);
+Route::get('motherDeathDetails', [MotherDeathController::class, 'index']);
+Route::get('spouseDeathDetails', [SpouseDeathController::class, 'index']);
 Route::get('businessDetails', [BusinessController::class, 'index']);
 Route::get('scholarshipDetails', [ScholarshipController::class, 'index']);
 Route::get('appointmentDetails', [AppointmentController::class, 'index']);
@@ -173,11 +207,13 @@ Route::get('suggestionsDetails', [SuggestionsController::class, 'index']);
  Route::get('/staffHome', [StaffHomeController::class, 'index'])->name('staffHome'); 
  Route::get('/home', [StaffHomeController::class, 'index'])->name('home'); 
  
- //records from the database
+ //records from the database displayed in the index
 Route::get('/birthRequest', [RecordBirthController::class, 'index'])->name('birthRequest'); 
 Route::get('/marriageRequest', [RecordMarriageController::class, 'index'])->name('marriageRequest'); 
 Route::get('/cenomarRequest', [RecordCenomarController::class, 'index'])->name('cenomarRequest'); 
 Route::get('/fatherDeathRequest', [RecordFatherDeathController::class, 'index'])->name('fatherDeathRequest'); 
+Route::get('/motherDeathRequest', [RecordMotherDeathController::class, 'index'])->name('motherDeathRequest'); 
+Route::get('/spouseDeathRequest', [RecordSpouseDeathController::class, 'index'])->name('spouseDeathRequest'); 
 Route::get('/scholarshipRequest', [RecordScholarshipController::class, 'index'])->name('scholarshipRequest'); 
 Route::get('/businessPermitRequest', [RecordBusinessController::class, 'index'])->name('businessPermitRequest'); 
 Route::get('/appointmentRequest', [RecordAppointmentController::class, 'index'])->name('appointmentRequest'); 

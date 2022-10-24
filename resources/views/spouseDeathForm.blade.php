@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/cf7a571938.js" crossorigin="anonymous"></script>
     <link rel="icon" href="{{ url('image/Cebu Seal.png') }}">
     <script src="{{ URL::asset('js/home.js') }}"></script>
-    <link rel="stylesheet" href="{{ URL::asset('css/birthForm.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/deathForm.css') }}" />
     <title>Cebu Registration</title>
 
 </head>
@@ -32,7 +32,7 @@
                 </li>
 
                 <li>
-                    <a href="#orders">
+                    <a href="#">
                         <span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span>
                         <span class="title">Services</span>
                     </a>
@@ -59,7 +59,7 @@
 
     <div class="main">
         <div class="topbar">
-            <div class="toggle" onclick="toggleMenu();"></div> 
+            <div class="toggle" onclick="toggleMenu();"></div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav me-auto">
@@ -86,7 +86,8 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" style="color: white; font-weight:600"
                                 aria-expanded="false" v-pre>
-                               <span style="font-family: 'Courier New', Courier, monospace"> Welcome,{{ Auth::user()->name }}</span>
+                                <span style="font-family: 'Courier New', Courier, monospace">
+                                    Welcome,{{ Auth::user()->name }}</span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -110,17 +111,10 @@
             <div class="form">
                 <div class="tab-content">
                     <div id="signup">
-                        <h1><span style="color:#314964">| <b> Certificate of Marriage</b> </span></h1>
-                        <p class="note">You should use your own name, gender, and birthday on this step.
-                            We will ask for the name of your spouse at a later step.
-                            You are not allowed to request for your marriage certificate if you are below 18 years old
-                            at the time of application.
-                            Please make sure your name and birthday match the details on your ID.
+                        <h1><span style="color:#314964">| <b>Spouse Death Certificate</b> </span></h1>
                         <h3>Your Information</h3>
-
-                        <form method="post" action="{{url('addMarriage')}}"> <!--sa web ni makita nga url,sa route-->
+                        <form method="post" action="{{ url('addSpouseDeath') }}">
                             {{ csrf_field() }}
-
                             <div class="field-wrap">
                                 <label for="sex" id="sex">
                                     Your Sex<span class="req">*</span>
@@ -163,68 +157,9 @@
                                 <label>
                                     Birthdate<span class="req">*</span>
                                 </label>
-                                <input name="birthdate" id="Birthdate" min="1960-12-31" max="2005-10-30" type="date" required autocomplete="off">
+                                <input name="birthdate" id="Birthdate" type="date" min="1960-12-31" max="2005-10-30" required autocomplete="off">
                             </div>
-
-                            <div class="field-wrap">
-                                <label>
-                                    Place of Birth<span class="req">*</span>
-                                </label>
-                                <select name="birthplace" id="Place of Birth" required autocomplete="off">
-                                    <option value="">-Place of Birth-</option>
-                                    <option value="Boljoon Cebu Province">BOLJOON CEBU PROVINCE</option>
-                                    <option value="Car-Car Cebu Province">CAR-CAR CEBU PROVINCE</option>
-                                    <option value="Toledo Cebu Province">TOLEDO CEBU PROVINCE</option>
-                                    <option value="Talisay Cebu Province">TALISAY CEBU PROVINCE</option>
-                                    <option value="Talamban Cebu Province">TALAMBAN CEBU PROVINCE</option>
-                                    <option value="Lapu-Lapu Cebu Province">LAPU-LAPU CEBU PROVINCE</option>
-                                    <option value="Argao Cebu Province">ARGAO CEBU PROVINCE</option>
-                                    <option value="Bogo Cebu Province">BOGO CEBU PROVINCE</option>
-                                    <option value="Dalaguete Cebu Province">DALAGUETE CEBU PROVINCE</option>
-                                    <option value="Minglanilla Cebu Province"> MINGLANILLA CEBU PROVINCE</option>
-                                    <option value="Medellin Cebu Province">MEDELLIN CEBU PROVINCE</option>
-                                    <option value="Consolacion Cebu Province"> CONSOLACION CEBU PROVINCE</option>
-                                    <option value="Danao Cebu Province">DANAO CEBU PROVINCE</option>
-                                    <option value="Mandaue Cebu Province">MANDAUE CEBU PROVINCE</option>
-                                    <option value="Naga Cebu Province">NAGA CEBU PROVINCE</option>
-                                    <option value="Sibonga Cebu Province">SIBONGA CEBU PROVINCE</option>
-                                    <option value="San Fernando Cebu Province">SAN FERNANDO CEBU PROVINCE</option>
-                                    <option value="Cordova Cebu Province">CORDOVA CEBU PROVINCE</option>
-                                    <option value="Alcoy Cebu Province">ALCOY CEBU PROVINCE</option>
-                                    <option value="Oslob Cebu Province">OSLOB CEBU PROVINCE</option>
-                                    <option value="Santander Cebu Province">SANTANDER CEBU PROVINCE</option>
-                                    <option value="Compostela Cebu Province">COMPOSTELA CEBU PROVINCE</option>
-                                    <option value=" Bantayan Cebu Province">BANTAYAN CEBU PROVINCE</option>
-                                    <option value=" Ginatilan Cebu Province">GINATILAN CEBU PROVINCE</option>
-                                    <option value="Alegria Cebu Province">ALEGRIA CEBU PROVINCE</option>
-                                    <option value="Catmon Cebu Province">CATMON CEBU PROVINCE</option>
-                                    <option value="Balamban Cebu Province">BALAMBAN CEBU PROVINCE</option>
-                                    <option value="Moalboal Cebu Province">MOALBOAL CEBU PROVINCE</option>
-                                    <option value="Alcantara Cebu Province">ALCANTARA CEBU PROVINCE</option>
-                                    <option value="Daan-Bantayan Cebu Province"> DAAN-BANTAYAN CEBU PROVINCE</option>
-                                    <option value="Samboan Cebu Province">SAMBOAN CEBU PROVINCE</option>
-                                    <option value="Dumanjug Cebu Province">DUMANJUG CEBU PROVINCE</option>
-                                    <option value="Pinamungajan Cebu Province"> PINAMUNGAJAN CEBU PROVINCE</option>
-                                    <option value="Tabugon Cebu Province">TABUGON CEBU PROVINCE</option>
-                                    <option value="Tabuelan Cebu Province">TABUELAN CEBU PROVINCE</option>
-                                    <option value="Ronda Cebu Province">RONDA CEBU PROVINCE</option>
-                                    <option value="Borbon Cebu Province">BORBON CEBU PROVINCE</option>
-                                    <option value="Tudela Cebu Province">TUDELA CEBU PROVINCE</option>
-                                    <option value="Bdian Cebu Province">BADIAN CEBU PROVINCE</option>
-                                    <option value="Poro Cebu Province">PORO CEBU PROVINCE</option>
-                                    <option value="Malabuyoc Cebu Province">MALABUYOC CEBU PROVINCE</option>
-                                    <option value="Aloguinsan Cebu Province">ALOGUINSAN CEBU PROVINCE</option>
-                                    <option value="Asturias Cebu Province">ASTURIAS CEBU PROVINCE</option>
-                                    <option value="Ozamiz Cebu Province">OZAMIZ CEBU PROVINCE</option>
-                                    <option value="Sogod Cebu Province">SOGOD CEBU PROVINCE</option>
-                                    <option value="Barili Cebu Province">BARILI CEBU PROVINCE</option>
-                                    <option value="San Francisco Cebu Province">SAN FRANCISCO CEBU PROVINCE</option>
-                                    <option value="Madridejos Cebu Province">MADRIDEJOS CEBU PROVINCE</option>
-                                </select>
-                            </div><br>
-
-
-
+                            
                             <div class="field-wrap">
                                 <label for="" id="label-sex">
                                     Your Government-Issued ID Type <span class="req">*</span>
@@ -240,7 +175,7 @@
                                         Police (PNP) ID/Police Clearance
                                     </option>
                                     <option
-                                        value="Department of Social Welfare and Development (DSWD)Certification/4Ps ID ">
+                                        value="Department of Social Welfare and Development (DSWD) Certification/4Ps ID ">
                                         Department of Social Welfare and Development (DSWD)
                                         Certification/4Ps ID </option>
                                     <option value="Barangay ID/Certification with picture and signature"> Barangay
@@ -262,7 +197,8 @@
                                     <option
                                         value="Tax Identification Card (TIN) with a picture and signature issued by the Bureau Internal Revenue">
                                         Tax Identification Card (TIN) with a picture and signature issued by the Bureau
-                                        Internal Revenue </option>
+                                        of Internal Revenue
+                                    </option>
                                     <option
                                         value="School/Student ID for currently-enrolled students, 18 years old and above, issued by reputable schools/college/universities recognized by the Department of Education">
                                         School/Student ID for currently-enrolled students, 18 years old and above,
@@ -275,9 +211,13 @@
                                         Company IDs issued by private entities or institutions registered with,
                                         supervised or regulated by Bangkong Sentral ng Pilipinas(BSP), Security Exchange
                                         and Commission(SEC)</option>
+                                    <option
+                                        value="Company IDs issued by private entities or institutions registered with,  supervised or regulated by Bangkong Sentral ng  Pilipinas(BSP), Security Exchange and Commission(SEC)">
+                                        Social Security System (SSS) Unified Multi-Purpose ID
+                                    </option>
                                 </select>
                             </div>
-        
+
 
                             <h3>Your Spouse's Name</h3>
                             <div class="top-row">
@@ -285,7 +225,7 @@
                                     <label>
                                         First Name<span class="req">*</span>
                                     </label>
-                                    <input name="sfname" id="Spouse First Name" minlength="2" maxlength="25"
+                                    <input name="spousefname" id=" First Name" minlength="2" maxlength="25"
                                         type="text" required autocomplete="off" />
 
                                 </div>
@@ -294,36 +234,34 @@
                                     <label>
                                         Middle Name<span class="req"></span>
                                     </label>
-                                    <input name="smname" id="Spouse Middle Name" minlength="2" maxlength="25"
+                                    <input name="spousemname" id=" Middle Name" minlength="2" maxlength="25"
                                         type="text" required autocomplete="off" />
                                 </div>
-
                                 <div class="field-wrap">
                                     <label>
                                         Last Name<span class="req">*</span>
                                     </label>
-                                    <input name="slname" id="Spouse Last Name" minlength="2" maxlength="25"
+                                    <input name="spouselname" id="Mother Last Name" minlength="2" maxlength="25"
                                         type="text" required autocomplete="off" />
 
                                 </div>
                             </div>
 
-                            <h3>Your marriage date</h3>
                             <div class="field-wrap">
                                 <label>
-                                    Date of Marriage<span class="req">*</span>
+                                    Your Spouse's Date of Death<span class="req">*</span>
                                 </label>
-                                <input name="marriageDate" id="Date of Marriage" type="date" required
+                                <input name="deathdate" id="Date of Death" type="date" required
                                     autocomplete="off">
                             </div>
 
-                            <h3>Your Marriage Place</h3>
+
                             <div class="field-wrap">
                                 <label>
-                                    Place of Marriage<span class="req">*</span>
+                                    Your Spouse's Place of Death<span class="req">*</span>
                                 </label>
-                                <select name="marriageplace" id="Place of Marriage" required autocomplete="off">
-                                    <option value="">-Place of Marriage-</option>
+                                <select name="deathplace" id="Place of Death" required autocomplete="off">
+                                    <option value="">-Place of Death-</option>
                                     <option value="Boljoon Cebu Province">BOLJOON CEBU PROVINCE</option>
                                     <option value="Car-Car Cebu Province">CAR-CAR CEBU PROVINCE</option>
                                     <option value="Toledo Cebu Province">TOLEDO CEBU PROVINCE</option>
@@ -373,52 +311,55 @@
                                     <option value="San Francisco Cebu Province">SAN FRANCISCO CEBU PROVINCE</option>
                                     <option value="Madridejos Cebu Province">MADRIDEJOS CEBU PROVINCE</option>
                                 </select>
-                            </div><br>
-
-                            <h3>The Purpose of your Request...</h3>
-                            <div class="field-wrap">
-                                <select name="purpose" id="Purpose of Request" required autocomplete="off">
-                                    <option value="">-Purpose-</option>
-                                    <option value="Passport / Travel">Passport / Travel</option>
-                                    <option value="Passport / Travel">Passport / Travel</option>
-                                    <option value="Local Employment">Local Employment</option>
-                                    <option value="Foreign Employment">Foreign Employment</option>
-                                    <option value="Marriage">Marriage</option>
-                                    <option value="Claims / Benefits / Loans">Claims / Benefits / Loans</option>
-                                    <option value="Late Registration">Late Registration</option>
-                                </select>
                             </div>
 
-                            <h3>Legal Proceedings</h3>
+
                             <div class="field-wrap">
+                                <h3>Late Registration</h3>
                                 <p class="note">The certificate you are requesting for may not be digitized yet by
-                                    the PSA. There is a chance that you will receive a Certificate of Negative Intact if
-                                    you continue.
+                                    the PSA if it was
+                                    registered late. There is a chance that you will receive a Certificate of Negative
+                                    Intact if you continue.
                                 </p>
-                                <select name="legalProceedings" id="Legal Proceedings">
-                                    <option value="None">None</option>
-                                    <option value="Supplemental">Supplemental</option>
-                                    <option value="Correction of Entry">Correction of Entry</option>
-                                    <option value="Annulment">Annulment</option>
-                                    <option value="Nullity of Marriage">Nullity of Marriage</option>
-                                    <option value="Legal Separation">Legal Separation</option>
-                                </select>
-                            </div> <br>
+                                <select name="lateReg" id="Late Registration" required autocomplete="off">
+                                    <option value=""> -Was the certificate registered late?-</option>
+                                    <option value="Yes">Yes, it was registered late</option>
+                                    <option value="No">No, it was registered on-time</option>
+                                </select> <br>
 
-                            <h3>Additional Information</h3>
-                            <div class="field-wrap">
-                                <p class="note">Please provide your Mobile Number for the update of your request.</p>
-                                <label for="phone">Tel/Mobile Number<span class="req">*</span></label>
-                                <input type="tel" id="phone" pattern="[0-9]{11}" placeholder="09123456789" name="phone" requiredautocomplete="off" />
-                            </div>
+                                <h3>The Purpose of Your Request...</h3>
+                                <div class="field-wrap">
+                                    <select name="purpose" id="Purpose of Request" required autocomplete="off">
+                                        <option value="">-Purpose-</option>
+                                        <option value="Passport / Travel">Passport / Travel</option>
+                                        <option value="School Requirement">School Requirement</option>
+                                        <option value="Local Employment">Local Employment</option>
+                                        <option value="Foreign Employment">Foreign Employment</option>
+                                        <option value="Marriage">Marriage</option>
+                                        <option value="Claims / Benefits / Loans">Claims / Benefits / Loans</option>
+                                        <option value="Late Registration">Late Registration</option>
+                                    </select>
+                                </div>
 
-                            <div class="verifyBtn">
-                                <button class="continueBtn">Submit</button>
-                            </div>
+                                <h3>Additional Information</h3>
+                                <div class="field-wrap">
+                                    <p class="note">Please provide your Mobile Number for the update of your request.
+                                    </p>
+                                    <label for="phone">Tel/Mobile Number<span class="req">*</span></label>
+                                    <input type="tel" id="phone" pattern="[0-9]{11}"
+                                        placeholder="09123456789" name="phone" requiredautocomplete="off" />
+                                </div>
+
+
+                                <div class="verifyBtn">
+                                    <button class="continueBtn">Submit</button>
+                                </div>
                         </form>
                     </div>
                 </div>
             </div>
+
+
         </section>
 
         <footer class="footer">
@@ -450,8 +391,6 @@
                             <li><a href="#">+(63)955 480 0304</a></li>
                             <li><a href="#">+123 - 345 - 567</a></li>
                             <li><a href="#">https://www.cebucity.gov.ph/</a></li>
-                            <img src="./image/map.png" class="map" alt="">
-
                         </ul>
                     </div>
                 </div>
@@ -468,6 +407,7 @@
                 </div>
             </div>
         </footer>
+    </div>
 
 </body>
 

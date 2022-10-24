@@ -135,7 +135,7 @@
             </a>
 
 
-            <a href="{{ url('/fatherDeathRequest') }}" class="data-card">
+            <a href="{{ url('/deathCertRequests') }}" class="data-card">
                 <h3><img style="width:120px" src="image/death.png" alt=""></h3>
                 <h4>Death Certificate</h4>
                 <span class="link-text">

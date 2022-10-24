@@ -32,7 +32,7 @@
                 </li>
 
                 <li>
-                    <a href="">
+                    <a href="#">
                         <span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span>
                         <span class="title">Services</span>
                     </a>
@@ -108,19 +108,19 @@
 
         <section>
             <div>
-                <h1 class="intro_title">Request for Your <span style="font-weight:600"> Father's Death Certificate</span></h1>
+                <h1 class="intro_title">Request for Your <span style="font-weight:600"> Spouse's Death Certificate</span></h1>
             </div>
             <div class="instruct">To request for a copy of the
-                death certificate of your father, we will need to ask you the following information...<br> <br>
+                death certificate of your Mother, we will need to ask you the following information...<br> <br>
                 <div class="details">1. Your name, sex, birthday, and valid government-issued ID</div>
-                <div class="details">2. Your father's name</div>
-                <div class="details">3. The date when he passed away</div>
-                <div class="details">4. The place where he passed away</div>
+                <div class="details">2. Your spouse's name</div>
+                <div class="details">3. The date when she/he passed away</div>
+                <div class="details">4. The place where she/he passed away</div>
                 <div class="details">5. Late registration (if applicable)</div>
                 <div class="details">6. The purpose of your request</div>
                 <div class="details">6. Legal proceedings (if applicable)</div>
             </div>
-            <a href="{{ url('/fatherDeathForm') }}"><button class="continueBtn">Continue</button></a>
+            <a href="{{ url('/spouseDeathForm') }}"><button class="continueBtn">Continue</button></a>
 
         </section>
 

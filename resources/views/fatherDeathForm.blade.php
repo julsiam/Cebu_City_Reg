@@ -32,39 +32,26 @@
                 </li>
 
                 <li>
-                    <a href="#orders">
+                    <a href="#">
                         <span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span>
                         <span class="title">Services</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#customers">
-                        <span class="icon"><i class="fa fa-list-ul" aria-hidden="true"></i></span>
-                        <span class="title">About</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#products">
-                        <span class="icon"><i class="fa fa-book" aria-hidden="true"></i></span>
-
-                        <span class="title">Account</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="">
-                        <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
-                        <span class="title">Message</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./loginpage.html">
-                        <span class="icon"><i class="fa fa-sign-out" aria-hidden="true"></i> </span>
-                        <span class="title">Sign Out</span>
-                    </a>
+                    @if (Route::has('login'))
+                        @auth
+                            <a href="{{ url('/staffHome') }}">
+                                <span class="icon"><i class="fa fa-sign-out" aria-hidden="true"></i> </span>
+                                <span class="title">Back to Dashboard</span>
+                            </a>
+                        @else
+                            <a href="{{ route('login') }}">
+                                <span class="icon"><i class="fa fa-sign-in" aria-hidden="true"></i> </span>
+                                <span class="title">Sign In</span>
+                            </a>
+                        @endauth
+                    @endif
                 </li>
             </ul>
         </div>
@@ -73,6 +60,51 @@
     <div class="main">
         <div class="topbar">
             <div class="toggle" onclick="toggleMenu();"></div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left Side Of Navbar -->
+                <ul class="navbar-nav me-auto">
+
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ms-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                        @if (Route::has('login'))
+                            {{-- <div class="landingbtn">
+                                <a href="{{ route('login') }}"> <button class="signinBtn">Login</button></a>
+                            </div> --}}
+                        @endif
+
+                        {{-- @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                        @endif --}}
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" style="color: white; font-weight:600"
+                                aria-expanded="false" v-pre>
+                                <span style="font-family: 'Courier New', Courier, monospace">
+                                    Welcome,{{ Auth::user()->name }}</span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                {{-- <a style="color: #314964; font-weight:600" class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a> --}}
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
+            </div>
         </div>
 
         <section>
@@ -81,7 +113,8 @@
                     <div id="signup">
                         <h1><span style="color:#314964">| <b>Father Death Certificate</b> </span></h1>
                         <h3>Your Information</h3>
-                        <form method="post" action="{{url('addFatherDeath')}}"> <!--sa web ni makita nga url,sa route-->
+                        <form method="post" action="{{ url('addFatherDeath') }}">
+                            <!--sa web ni makita nga url,sa route-->
                             {{ csrf_field() }}
                             <div class="field-wrap">
                                 <label for="sex" id="sex">
@@ -115,8 +148,8 @@
                                     <label>
                                         Last Name<span class="req">*</span>
                                     </label>
-                                    <input name="lname" id="Last Name" minlength="2" maxlength="25" type="text"
-                                        required autocomplete="off" />
+                                    <input name="lname" id="Last Name" minlength="2" maxlength="25"
+                                        type="text" required autocomplete="off" />
 
                                 </div>
                             </div>
@@ -125,7 +158,7 @@
                                 <label>
                                     Birthdate<span class="req">*</span>
                                 </label>
-                                <input name="birthdate" id="Birthdate" type="date" required autocomplete="off">
+                                <input name="birthdate" id="Birthdate" type="date" min="1960-12-31" max="2005-10-30" required autocomplete="off">
                             </div>
 
                             <div class="field-wrap">
@@ -217,7 +250,7 @@
 
                             <div class="field-wrap">
                                 <label>
-                                    Your Father's Date of Birth<span class="req">*</span>
+                                    Your Father's Date of Death<span class="req">*</span>
                                 </label>
                                 <input name="deathdate" id="Date of Death" type="date" required
                                     autocomplete="off">
@@ -311,9 +344,11 @@
 
                                 <h3>Additional Information</h3>
                                 <div class="field-wrap">
-                                    <p class="note">Please provide your Mobile Number for the update of your request.</p>
+                                    <p class="note">Please provide your Mobile Number for the update of your request.
+                                    </p>
                                     <label for="phone">Tel/Mobile Number<span class="req">*</span></label>
-                                    <input type="tel" id="phone" pattern="[0-9]{11}" placeholder="09123456789" name="phone" requiredautocomplete="off" />
+                                    <input type="tel" id="phone" pattern="[0-9]{11}"
+                                        placeholder="09123456789" name="phone" requiredautocomplete="off" />
                                 </div>
 
                                 <div class="verifyBtn">
@@ -324,7 +359,7 @@
                 </div>
             </div>
 
-            
+
         </section>
 
         <footer class="footer">
@@ -356,8 +391,6 @@
                             <li><a href="#">+(63)955 480 0304</a></li>
                             <li><a href="#">+123 - 345 - 567</a></li>
                             <li><a href="#">https://www.cebucity.gov.ph/</a></li>
-                            <img src="./image/map.png" class="map" alt="">
-
                         </ul>
                     </div>
                 </div>

@@ -39,32 +39,19 @@
                 </li>
 
                 <li>
-                    <a href="#customers">
-                        <span class="icon"><i class="fa fa-list-ul" aria-hidden="true"></i></span>
-                        <span class="title">About</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#products">
-                        <span class="icon"><i class="fa fa-book" aria-hidden="true"></i></span>
-
-                        <span class="title">Account</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="">
-                        <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
-                        <span class="title">Message</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./loginpage.html">
-                        <span class="icon"><i class="fa fa-sign-out" aria-hidden="true"></i> </span>
-                        <span class="title">Sign Out</span>
-                    </a>
+                    @if (Route::has('login'))
+                        @auth
+                            <a href="{{ url('/staffHome') }}">
+                                <span class="icon"><i class="fa fa-sign-out" aria-hidden="true"></i> </span>
+                                <span class="title">Back to Dashboard</span>
+                            </a>
+                        @else
+                            <a href="{{ route('login') }}">
+                                <span class="icon"><i class="fa fa-sign-in" aria-hidden="true"></i> </span>
+                                <span class="title">Sign In</span>
+                            </a>
+                        @endauth
+                    @endif
                 </li>
             </ul>
         </div>
@@ -73,6 +60,51 @@
     <div class="main">
         <div class="topbar">
             <div class="toggle" onclick="toggleMenu();"></div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left Side Of Navbar -->
+                <ul class="navbar-nav me-auto">
+
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ms-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                        @if (Route::has('login'))
+                            {{-- <div class="landingbtn">
+                                <a href="{{ route('login') }}"> <button class="signinBtn">Login</button></a>
+                            </div> --}}
+                        @endif
+
+                        {{-- @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                        @endif --}}
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" style="color: white; font-weight:600"
+                                aria-expanded="false" v-pre>
+                                <span style="font-family: 'Courier New', Courier, monospace">
+                                    Welcome,{{ Auth::user()->name }}</span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                {{-- <a style="color: #314964; font-weight:600" class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a> --}}
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
+            </div>
         </div>
 
         <section>
@@ -81,14 +113,14 @@
                     <div id="signup">
                         <h1><span style="color:#314964"> <b>Whose Death Certificate you are requesting for?*</b> </span>
                         </h1>
-                      
+
                         <form action="#" method="post" name="registration">
                             <div class="field-wrap">
                                 <select name="deathWho" id="deathwho" onchange="location = this.value;">
                                     <option value="#">-Whose Death Certificate are you requesting for?-</option>
-                                    <option value="{{ url('fatherDeathCert')}}">FATHER</option></a>
-                                    <option value="{{ url('motherDeathCert')}}">MOTHER</option>
-                                    <option value="{{ url('spouseDeathCert')}}">SPOUSE</option>
+                                    <option value="{{ url('fatherDeathCert') }}">FATHER</option></a>
+                                    <option value="{{ url('motherDeathCert') }}">MOTHER</option>
+                                    <option value="{{ url('spouseDeathCert') }}">SPOUSE</option>
                                 </select> <br> <br>
                                 <p class="note">If you need a Death Certificate for your son or daughter, please call
                                     our hotline at (02) 8737-1111. There are additional verification checks that we need
@@ -106,7 +138,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </section>
 
         <footer class="footer">
@@ -138,8 +170,6 @@
                             <li><a href="#">+(63)955 480 0304</a></li>
                             <li><a href="#">+123 - 345 - 567</a></li>
                             <li><a href="#">https://www.cebucity.gov.ph/</a></li>
-                            <img src="./image/map.png" class="map" alt="">
-
                         </ul>
                     </div>
                 </div>

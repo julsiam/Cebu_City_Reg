@@ -10,7 +10,7 @@
     <script src="{{ URL::asset('js/home.js') }}"></script>
     <link rel="stylesheet" href="{{ URL::asset('css/landing.css') }}" />
     <title>Cebu Registration</title>
-
+    
 </head>
 
 <body>
@@ -57,55 +57,62 @@
         </div>
     </div>
 
-    {{-- STOP IN HERE --}}
     <div class="main" id="main">
         <div class="topbar">
             <div class="toggle" onclick="toggleMenu();"></div> 
-            @guest
-                @if (Route::has('login'))
-                    {{-- <div class="landingbtn">
-                        <a href="{{ route('login') }}"> <button class="signinBtn">Login</button></a>
-                    </div> --}}
-                @endif
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left Side Of Navbar -->
+                <ul class="navbar-nav me-auto">
 
-                {{-- @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                </li>
-            @endif --}}
-            @else
-                <li class="nav-item dropdown" style="list-style: none">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                    data-bs-toggle="dropdown" aria-haspopup="true" style="color: white; font-weight:600"
-                    aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
-                    </a>
+                </ul>
 
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a style="color: #314964; font-weight:600" class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ms-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                        @if (Route::has('login'))
+                        @endif
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </div>
-                </li>
-            @endguest
+                         {{-- KANI DIRI AH, IUNCOMMENT NI SIYA ONCE NAAY MUREGISTER NGA STAFF BAG-O,  --}}
 
+
+                        {{-- @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                        @endif --}}
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" style="color: white; font-weight:600"
+                                aria-expanded="false" v-pre>
+                               <span style="font-family: 'Courier New', Courier, monospace"> Welcome,{{ Auth::user()->name }}</span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                {{-- <a style="color: #314964; font-weight:600" class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a> --}}
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
+            </div>
         </div>
 
 
         <header>
             <div class="intro">
                 <h1 class="intro_title"> Cebu City Registration Services</h1> <br>
-                <p> Renowned for its commitment to excellence, the <strong class="cityName"> Cebu City Government
-                    </strong> develops its peoples's professional competence, character, and social transformation.
-                    Since its founding, USC offers its learners varied academic environments that foster academic
-                    excellence and lifelong learning, developing future professionals who will leave their marks as
-                    leaders in their respective fields.</p>
+                <p> Living with its commitment and service for the Cebuano, the <strong class="cityName"> Cebu City Registration System
+                    </strong> is made for the procurement of important document in convenient way. 
+                    </p>
             </div>
 
             <section id="services" class="page-contain">
@@ -113,7 +120,7 @@
                 <a href="{{ url('/birthCert') }}" class="data-card">
                     <h3><img style="width:120px" src="image/birth.png" alt=""></h3>
                     <h4>Birth Certificate</h4>
-                    <p>PSA birth certificate online application and delivery around cebu. Open 24/7. Fast, easy, and
+                    <p>PSA Birth Certificate online application around Cebu. Open 24/7. Fast, easy, and
                         secure. With status updates.</p>
                     <span class="link-text">
                         Register
@@ -129,7 +136,7 @@
                 <a href="{{ url('/marriageCert') }}" class="data-card">
                     <h3><img style="width:120px" src="image/marriage.png" alt=""></h3>
                     <h4>Marriage Certificate</h4>
-                    <p>PSA birth certificate online application and delivery around cebu. Open 24/7. Fast, easy, and
+                    <p>Marriage Certificate online application around cebu. Open 24/7. Fast, easy, and
                         secure. With status updates.</p>
                     <span class="link-text">
                         Register
@@ -145,7 +152,7 @@
                 <a href="{{ url('/cenomar') }}" class="data-card">
                     <h3><img style="width:120px" src="image/cenomar.png" alt=""></h3>
                     <h4>CENOMAR</h4>
-                    <p>PSA birth certificate online application and delivery around cebu. Open 24/7. Fast, easy, and
+                    <p>CENOMAR online application around cebu. Open 24/7. Fast, easy, and
                         secure. With status updates.</p>
                     <span class="link-text">
                         Register
@@ -162,7 +169,7 @@
                 <a href="{{ url('/deathCertWho') }}" class="data-card">
                     <h3><img style="width:120px" src="image/death.png" alt=""></h3>
                     <h4>Death Certificate</h4>
-                    <p>PSA birth certificate online application and delivery around cebu. Open 24/7. Fast, easy, and
+                    <p>Death Certificate online application around cebu. Open 24/7. Fast, easy, and
                         secure. With status updates.</p>
 
                     <span class="link-text">
@@ -179,8 +186,7 @@
                 <a href="{{ url('/scholarship') }}" class="data-card">
                     <h3><img style="width:120px" src="image/scholarship.png" alt=""></h3>
                     <h4>Scholarship</h4>
-                    <p>An estimated 7,000 scholars are admitted to the various local scholarship programs in Cebu
-                        Universities.</p>
+                    <p>The governement is offering scholarship for its students. This is a big opportunity for you to avail</p>
                     <span class="link-text">
                         Apply
                         <svg width="25" height="16" viewBox="0 0 25 16" fill="none"
@@ -195,8 +201,8 @@
                 <a href="{{ url('/permit') }}" class="data-card">
                     <h3><img style="width:120px" src="image/permit.png" alt=""></h3>
                     <h4>Business permit</h4>
-                    <p>An estimated 7,000 scholars are admitted to the various local scholarship programs in Cebu
-                        Universities.</p>
+                    <p>Business Permit online application around cebu. Open 24/7. Fast, easy, and
+                        secure. With status updates.</p>
                     <span class="link-text">
                         Register
                         <svg width="25" height="16" viewBox="0 0 25 16" fill="none"
@@ -211,8 +217,7 @@
                 <a href="{{ url('/appointment') }}" class="data-card">
                     <h3><img style="width:120px" src="image/appointment.png" alt=""></h3>
                     <h4>Appointment</h4>
-                    <p>Application for renewal of license or permit shall be filed or registered on or before January 20
-                        of each year book now.</p>
+                    <p>Have an appointment with any of your concerns. Just wait for the confirmation before hand.</p>
                     <span class="link-text">
                         Book
                         <svg width="25" height="16" viewBox="0 0 25 16" fill="none"
@@ -227,8 +232,7 @@
                 <a href="{{ url('/suggestion') }}" class="data-card">
                     <h3><img style="width:120px" src="image/suggestions.png" alt=""></h3>
                     <h4>Suggestions</h4>
-                    <p>Application for renewal of license or permit shall be filed or registered on or before January 20
-                        of each year book now.</p>
+                    <p>Let your words be heard. We are glad to hear from you. What's on your mind?</p>
                     <span class="link-text">
                         Register
                         <svg width="25" height="16" viewBox="0 0 25 16" fill="none"
