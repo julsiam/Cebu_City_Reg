@@ -25,9 +25,9 @@ class MarriageController extends Controller
         $marriageDetails->birthdate = $request->get('birthdate');
         $marriageDetails->birthplace = $request->get('birthplace');
         $marriageDetails->idtype = $request->get('idtype');
-        $marriageDetails->sfname = $request->get('sfname');
-        $marriageDetails->smname = $request->get('smname');
-        $marriageDetails->slname = $request->get('slname');
+        $marriageDetails->sfirstname = $request->get('sfirstname');
+        $marriageDetails->smiddlename = $request->get('smiddlename');
+        $marriageDetails->slastname = $request->get('slastname');
         $marriageDetails->marriageDate = $request->get('marriageDate');
         $marriageDetails->marriageplace = $request->get('marriageplace');
         $marriageDetails->purpose = $request->get('purpose');
@@ -59,9 +59,9 @@ class MarriageController extends Controller
         $marriageDetails->birthdate = $request->birthdate;
         $marriageDetails->birthplace = $request->birthplace;
         $marriageDetails->idtype = $request->idtype;
-        $marriageDetails->sfname = $request->sfname;
-        $marriageDetails->smname = $request->smname;
-        $marriageDetails->slname = $request->slname;
+        $marriageDetails->sfirstname = $request->sfirstname;
+        $marriageDetails->smiddlename = $request->smiddlename;
+        $marriageDetails->slastname = $request->slastname;
         $marriageDetails->marriageDate = $request->marriageDate;
         $marriageDetails->marriageplace = $request->marriageplace;
         $marriageDetails->purpose = $request->purpose;

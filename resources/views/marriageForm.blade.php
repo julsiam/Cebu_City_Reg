@@ -285,7 +285,7 @@
                                     <label>
                                         First Name<span class="req">*</span>
                                     </label>
-                                    <input name="sfname" id="Spouse First Name" minlength="2" maxlength="25"
+                                    <input name="sfirstname" id="Spouse First Name" minlength="2" maxlength="25"
                                         type="text" required autocomplete="off" />
 
                                 </div>
@@ -294,7 +294,7 @@
                                     <label>
                                         Middle Name<span class="req"></span>
                                     </label>
-                                    <input name="smname" id="Spouse Middle Name" minlength="2" maxlength="25"
+                                    <input name="smiddlename" id="Spouse Middle Name" minlength="2" maxlength="25"
                                         type="text" required autocomplete="off" />
                                 </div>
 
@@ -302,7 +302,7 @@
                                     <label>
                                         Last Name<span class="req">*</span>
                                     </label>
-                                    <input name="slname" id="Spouse Last Name" minlength="2" maxlength="25"
+                                    <input name="slastname" id="Spouse Last Name" minlength="2" maxlength="25"
                                         type="text" required autocomplete="off" />
 
                                 </div>
@@ -379,7 +379,6 @@
                             <div class="field-wrap">
                                 <select name="purpose" id="Purpose of Request" required autocomplete="off">
                                     <option value="">-Purpose-</option>
-                                    <option value="Passport / Travel">Passport / Travel</option>
                                     <option value="Passport / Travel">Passport / Travel</option>
                                     <option value="Local Employment">Local Employment</option>
                                     <option value="Foreign Employment">Foreign Employment</option>

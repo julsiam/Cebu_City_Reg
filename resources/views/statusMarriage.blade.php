@@ -56,28 +56,25 @@
                             <input type="text" name="idtype" readonly value="{{ $marriage['idtype'] }}"><br>
                         </label>
                         <label for="">Spouse's First Name:
-                            <input type="text" name="ffname" readonly value="{{ $marriage['sfname'] }}"><br>
+                            <input type="text" name="sfirstname" readonly value="{{ $marriage['sfirstname'] }}"><br>
                         </label>
                         <label for="">Spouse's Middle Name:
-                            <input type="text" name="fmname" readonly value="{{ $marriage['smname'] }}"><br>
+                            <input type="text" name="smiddlename" readonly value="{{ $marriage['smiddlename'] }}"><br>
                         </label>
                         <label for="">Spouse's Last Name:
-                            <input type="text" name="flname" readonly value="{{ $marriage['slname'] }}"><br>
+                            <input type="text" name="slastname" readonly value="{{ $marriage['slastname'] }}"><br>
                         </label>
                         <label for="">Mariage Date:
-                            <input type="text" name="marriageDate" readonly
-                                value="{{ $marriage['marriageDate'] }}"><br>
+                            <input type="text" name="marriageDate" readonly value="{{ $marriage['marriageDate'] }}"><br>
                         </label>
                         <label for="">Marriage Place:
-                            <input type="text" name="marriageplace" readonly
-                                value="{{ $marriage['marriageplace'] }}"><br>
+                            <input type="text" name="marriageplace" readonly value="{{ $marriage['marriageplace'] }}"><br>
                         </label>
                         <label for="">Purpose:
                             <input type="text" name="purpose" readonly value="{{ $marriage['purpose'] }}"><br>
                         </label>
                         <label for="">Legal Proceedings:
-                            <input type="text" name="legalProceedings" readonly
-                                value="{{ $marriage['legalProceedings'] }}"><br>
+                            <input type="text" name="legalProceedings" readonly value="{{ $marriage['legalProceedings'] }}"><br>
                         </label>
                         <label for="">Phone:
                             <input type="text" name="phone" readonly value="{{ $marriage['phone'] }}"><br>

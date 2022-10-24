@@ -127,9 +127,9 @@
                             <td>{{ $marriage->birthdate }}</td>
                             <td>{{ $marriage->birthplace }}</td>
                             <td>{{ $marriage->idtype }}</td>
-                            <td>{{ $marriage->sfname }}</td>
-                            <td>{{ $marriage->smname }}</td>
-                            <td>{{ $marriage->slname }}</td>
+                            <td>{{ $marriage->sfirstname }}</td>
+                            <td>{{ $marriage->smiddlename }}</td>
+                            <td>{{ $marriage->slastname }}</td>
                             <td>{{ $marriage->marriageDate }}</td>
                             <td>{{ $marriage->marriageplace }}</td>
                             <td>{{ $marriage->purpose }}</td>
