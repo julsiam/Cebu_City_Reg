@@ -10,7 +10,7 @@
     <script src="{{ URL::asset('js/home.js') }}"></script>
     <link rel="stylesheet" href="{{ URL::asset('css/landing.css') }}" />
     <title>Cebu Registration</title>
-    
+
 </head>
 
 <body>
@@ -53,13 +53,22 @@
                         @endauth
                     @endif
                 </li>
+
+                <li>
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}">
+                            <span class="icon"><i class="fa-solid fa-user-plus" aria-hidden="true"></i> </span>
+                            <span class="title">Register</span>
+                        </a>
+                    @endif
+                </li>
             </ul>
         </div>
     </div>
 
     <div class="main" id="main">
         <div class="topbar">
-            <div class="toggle" onclick="toggleMenu();"></div> 
+            <div class="toggle" onclick="toggleMenu();"></div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav me-auto">
@@ -72,21 +81,14 @@
                     @guest
                         @if (Route::has('login'))
                         @endif
-
-                         {{-- KANI DIRI AH, IUNCOMMENT NI SIYA ONCE NAAY MUREGISTER NGA STAFF BAG-O,  --}}
-
-
-                        {{-- @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif --}}
+            
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" style="color: white; font-weight:600"
                                 aria-expanded="false" v-pre>
-                               <span style="font-family: 'Courier New', Courier, monospace"> Welcome,{{ Auth::user()->name }}</span>
+                                <span style="font-family: 'Courier New', Courier, monospace">
+                                    Welcome,{{ Auth::user()->name }}</span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -110,9 +112,10 @@
         <header>
             <div class="intro">
                 <h1 class="intro_title"> Cebu City Registration Services</h1> <br>
-                <p> Living with its commitment and service for the Cebuano, the <strong class="cityName"> Cebu City Registration System
-                    </strong> is made for the procurement of important document in convenient way. 
-                    </p>
+                <p> Living with its commitment and service for the Cebuano, the <strong class="cityName"> Cebu City
+                        Registration System
+                    </strong> is made for the procurement of important document in convenient way.
+                </p>
             </div>
 
             <section id="services" class="page-contain">
@@ -186,7 +189,8 @@
                 <a href="{{ url('/scholarship') }}" class="data-card">
                     <h3><img style="width:120px" src="image/scholarship.png" alt=""></h3>
                     <h4>Scholarship</h4>
-                    <p>The governement is offering scholarship for its students. This is a big opportunity for you to avail</p>
+                    <p>The governement is offering scholarship for its students. This is a big opportunity for you to
+                        avail</p>
                     <span class="link-text">
                         Apply
                         <svg width="25" height="16" viewBox="0 0 25 16" fill="none"

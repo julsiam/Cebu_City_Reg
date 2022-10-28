@@ -162,7 +162,7 @@
                             <td>{{ $businessPermit->businessArea }}</td>
                             <td>{{ $businessPermit->employeeTotal }}</td>
                             <td>{{ $businessPermit->lessorName }}</td>
-                            <td>{{ $businessPermit->lessorAddress }}</td>
+                            <td>{{ $businessPermit->lessorAdd}}</td>
                             <td>{{ $businessPermit->lessorPhone }}</td>
                             <td>{{ $businessPermit->lessorEmail }}</td>
                             <td>{{ $businessPermit->monthlyRent }}</td>
@@ -171,7 +171,6 @@
                             <td>{{ $businessPermit->brgyClearanceFile }}</td>
                             <td>{{ $businessPermit->sanitaryFile }}</td>
                             <td>{{ $businessPermit->fireSafetyFile }}</td>
-                            <td>{{ $businessPermit->otherFile }}</td>
                             <td>{{ $businessPermit->otherFile }}</td>
                             <td>{{ $businessPermit->status }}</td>
                             <td><a href={{ 'editBusiness/' . $businessPermit['id'] }}>Update</a>
